@@ -1,0 +1,35 @@
+# API keys and secrets — never commit these
+api_keys.json
+.env
+.env.local
+.env.*.local
+
+# Cache and runtime files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ipynb_checkpoints/
+*.log
+
+# Tests
+tests/
+
+# User cache
+.fmp/
+
+# SDD workspace (scratch files, not source)
+.superpowers/
+
+# Local venv activation scripts
+activate.sh
+deactivate.sh
+
+# IDE
+.vscode/
+.idea/

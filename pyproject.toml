@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fmp-stable-api"
+version = "2.0.1"
+description = "Financial Modeling Prep API client — auto-updating endpoints, GUI, and MCP server"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "requests>=2.25.0",
+    "urllib3>=1.26.0",
+]
+license = {text = "MIT"}
+keywords = ["finance", "financial", "modeling", "prep", "api", "stock", "market"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+
+[[project.authors]]
+name = "FMP Dev"
+email = "vr2969@g.rit.edu"
+
+[project.urls]
+Homepage = "https://github.com/Vimal-Seshadri-Raguraman/fmp-stable-api"
+Repository = "https://github.com/Vimal-Seshadri-Raguraman/fmp-stable-api"
+"Bug Tracker" = "https://github.com/Vimal-Seshadri-Raguraman/fmp-stable-api/issues"
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.0.0"]
+
+[project.scripts]
+fmp-gui = "fmp_stable_api.gui:main"
+fmp-mcp = "fmp_stable_api.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+"fmp_stable_api" = ["fmp_endpoints.json", "skill.md"]
+"fmp_stable_api.gui" = ["FMP_icon.png"]

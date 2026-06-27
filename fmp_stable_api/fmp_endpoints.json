@@ -1,0 +1,1878 @@
+{
+  "Introduction": "All of the endpoints for the FMP API and params for each endpoint that indicates if the endpoint is required or not",
+  "stable_url": "https://financialmodelingprep.com/stable/",
+  "endpoints": {
+    "Search": {
+      "search_symbol": {
+        "path": "search-symbol",
+        "required_params": [
+          "query"
+        ],
+        "optional_params": [
+          "limit",
+          "exchange"
+        ],
+        "description": "Easily find the ticker symbol of any stock with the FMP Stock Symbol Search API. Search by company name or symbol across multiple global markets.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "search_name": {
+        "path": "search-name",
+        "required_params": [
+          "query"
+        ],
+        "optional_params": [
+          "limit",
+          "exchange"
+        ],
+        "description": "Search for ticker symbols, company names, and exchange details for equity securities and ETFs listed on various exchanges with the FMP Name Search API. This endpoint is useful for retrieving ticker symbols when you know the full or partial company or asset name but not the symbol identifies.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "search_cik": {
+        "path": "search-cik",
+        "description": "Easily retrieve the Central Index Key (CIK) for publicly traded companies with the FMP CIK API. Access unique identifiers needed for SEC filings and regulatory documents for a streamlined compliance and financial analysis process.",
+        "required_params": [
+          "cik"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "search_cusip": {
+        "path": "search-cusip",
+        "description": "Easily search and retrieve financial securities information by CUSIP number using the FMP CUSIP API. Find key details such as company name, stock symbol, and market capitalization associated with the CUSIP.",
+        "required_params": [
+          "cusip"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "search_isin": {
+        "path": "search-isin",
+        "description": "Easily search and retrieve the International Securities Identification Number (ISIN) for financial securities using the FMP ISIN API. Find key details such as company name, stock symbol, and markete capitalizaiton associated with the ISIN.",
+        "required_params": [
+          "isin"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "company_screener": {
+        "path": "company-screener",
+        "optional_params": [
+          "marketCapMoreThan",
+          "marketCapLowerThan",
+          "sector",
+          "industry",
+          "betaMoreThan",
+          "betaLowerThan",
+          "priceMoreThan",
+          "priceLowerThan",
+          "dividendMoreThan",
+          "dividendLowerThan",
+          "volumeMoreThan",
+          "volumeLowerThan",
+          "exchange",
+          "country",
+          "isEtf",
+          "isFund",
+          "isActivelyTrading",
+          "limit",
+          "includeAllShareClasses"
+        ],
+        "required_params": [],
+        "description": "Discover stocks that align with your investment strategy using the FMP Stock Screener API. Filter stocks based on market cap, price, volume, beta, sector, country, and more to identify the best investment opportunities.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "search_exchange_variant": {
+        "path": "search-exchange-variant",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Search across multiple public exchanges to find where a given stock symbol is listed using the FMP Exchange Variants API. This allows users to quickly identify all the exchanges where a security is actively traded.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Directory": {
+      "company_symbols_list": {
+        "path": "stock-list",
+        "description": "Easily retrieve a comprehensive list of financial symbols with the FMP Company Symbol List API. Access a broad range of stocks and other tradable financial instruments from various global exchanges, helping you explore the full range of available securities",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "financial_statement_symbol_list": {
+        "path": "financial-statement-symbol-list",
+        "description": "Access a comprehensive list of companies with available financial statements through the FMP Financial Statement Symbols List API. Find companies listed on major global exchanges and obtain up-to-date financial data including income statements, balance sheets, and cash flow statements, are provided.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "cik_list": {
+        "path": "cik-list",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Access a comprehensive database of CIK (Central Index Key) numbers for SEC-registered entities with the FMP CIK List API. This endpoint is essential for businesses, financial professionals, and individuals who need quick access to CIK numbers for regulatory compliance, financial transactions, and investment research.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "symbol_change": {
+        "path": "symbol-change",
+        "description": "Stay informed about the latest stock symbol changes with the FMP Stock Symbol Changes API. Track changes due to mergers, acquisitions, stock splits, and name changes to ensure accurate trading and analysis.",
+        "required_params": [],
+        "optional_params": [
+          "invalid",
+          "limit"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "etf_list": {
+        "path": "etf-list",
+        "description": "Quickly find ticker symbols and company names for Exchange Traded Funds (ETFs) using the FMP ETF Symbol Search API. This tool simplifies identifying specific ETFs by their name or ticker.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "actively_trading_list": {
+        "path": "actively-trading-list",
+        "description": "List all actively trading companies and financial instruments with the FMP Actively Trading List API. This endpoint allows users to filter and display securities that are currently being traded on public exchanges, ensuring you access real-time market activity.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "earnings_transcript_list": {
+        "path": "earnings-transcript-list",
+        "description": "Access available earnings transcripts for companies with the FMP Earnings Transcript List API. Retrieve a list of companies with earnings transcripts, along with the total number of transcripts available for each company.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "available_exchanges": {
+        "path": "available-exchanges",
+        "description": "Access a complete list of supported stock exchanges using the FMP Available Exchanges API. This API provides a comprehensive overview of global stock exchanges, allowing users to identify where securities are traded and filter data by specific exchanges for further analysis.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "available_sectors": {
+        "path": "available-sectors",
+        "description": "Access a complete list of industry sectors using the FMP Available Sectors API. This API helps users categorize and filter companies based on their respective sectors, enabling deeper analysis and more focused queries across different industries.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "available_industries": {
+        "path": "available-industries",
+        "description": "Access a comprehensive list of industries where stock symbols are available using the FMP Available Industries API. This API helps users filter and categorize companies based on their industry for more focused research and analysis.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "available_countries": {
+        "path": "available-countries",
+        "description": "Access a comprehensive list of countries where stock symbols are available with the FMP Available Countries API. This API enables users to filter and analyze stock symbols based on the country of origin or the primary market where the securities are traded.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Calendar": {
+      "dividends_report": {
+        "path": "dividends",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "description": "Stay informed about upcoming dividend payments with the FMP Dividends Company API. This API provides essential dividend data for individual stock symbols, including record dates, payments dates, declaration dates, and more.",
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "dividends_calendar": {
+        "path": "dividends-calendar",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Stay informed on upcoming dividend events with the Dividend Events Calendar API. Access a comprehensive schedule of dividend-related dates for all stocks, including record dates, payment dates, declaration dates, and dividend yields.",
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "earnings_report": {
+        "path": "earnings",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "description": "Retrieve in-depth earnings information with the FMP Earnings Report API. Gain access to key financial data for a specific stock symbol, including earnings report dates, EPS estimates, and revenue projections to help you stay on top of company performance.",
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "earnings_calendar": {
+        "path": "earnings-calendar",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Stay informed on upcoming and past earnings announcements with the FMP Earnings Calendar API. Access key data including announcement dates, estimated earnings per share (EPS), and actual EPS for publicly traded companies.",
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "ipo_calendar": {
+        "path": "ipos-calendar",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access a comprehensive list of all upcoming initial public offerings (IPOs) with the FMP IPO Calendar API. Stay upto date on the latest companies entering the public market, with essential details on IPO dates, company names, expected pricing, and exchange listings.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "ipo_disclosure": {
+        "path": "ipos-disclosure",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access a comprehensive list of disclosure filings for upcoming initial public offerings (IPOs) with the FMP IPO Disclosure API. Stay updated on regulatory filings, including filing dates, effectiveness dates, CIK numbers, and form types, with direct links to official SEC documents.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "ipo_prospectus": {
+        "path": "ipos-prospectus",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access comprehensive information on IPO prospectuses with the FMP IPO Prospectus API. Get key financial details, such as public offering prices, discounts, commissions, proceeds before expenses, and more. This API also provides links to official SEC prospectuses, helping investors stay informed on companies entering the public market.",
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "stock_splits": {
+        "path": "splits",
+        "description": "Access detailed information on stock splits for a specific company using the FMP Stock Split Details API. This API provides essential data, including the split date and the split ratio, helping users understand changes in a company's share structure after a stock split.",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "stock_split_calendar": {
+        "path": "splits-calendar",
+        "description": "Stay informed about upcoming stock splits with the FMP Stock Splits Calendar API. This API provides essential data on upcoming stock splits across multiple companies, including the split date and ratio, helping you track changes in share structures before the occur",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Chart": {
+      "light": {
+        "path": "historical-price-eod/light",
+        "description": "Access simplified stock chart data using the FMP Basic Stock Chart API. This API provides essential charting information, including date, price, and trading volume, making it ideal for tracking stock performance with minimal data and creating basic price and volume chart",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "full": {
+        "path": "historical-price-eod/full",
+        "description": "Access full price and volume data for any stock symbol using the FMP Comprehensive Stock Price and Volume Data API. Get detailed insights, including open, high, low, close prices, trading volume, price changes, percentage changes, and volume-weighted average price (VWAP)",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "unadjusted": {
+        "path": "historical-price-eod/non-split-adjusted",
+        "description": "Access stock price and volume data without adjustments for stock splits with the FMP Unadjusted Stock Price Chart API. Get accurate insights into stock performance, including open, high, low, and close prices, along with trading volume, without split-related changes",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "dividend_adjusted": {
+        "path": "historical-price-eod/dividend-adjusted",
+        "description": "Analyze stock performance with dividend adjustments using the FMP Dividend-Adjusted-Price Chart API. Access end-of-day price and volume data that accounts for dividend payouts, offering a more comprehensive view of stock trends over time",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1min": {
+        "path": "historical-chart/1min",
+        "description": "Access precise intraday stock price and volume data with the FMP 1-Minute Interval Stock Chart API. Retrieve real-time or historical stock data in 1-minute intervals, including key information such as open, high, low, and close prices, and trading volume for each minute.",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_5min": {
+        "path": "historical-chart/5min",
+        "description": "Access stock price and volume data with the FMP 5-Minute Interval Stock Chart API. Retrieve detailed stock data in 5-minute intervals, including open, high, low, and close prices, along with trading volume for each 5-minute period. This API is perfect for short-term trading analysis and building intraday charts",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_15min": {
+        "path": "historical-chart/15min",
+        "description": "Access stock price and volume data with the FMP 15-Minute Interval Stock Chart API. Retrieve detailed stock data in 15-minute intervals, including open, high, low, close prices, and trading volume. This API is ideal for creating intraday charts and analyzing medium-term price trends during the trading day.",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_30min": {
+        "path": "historical-chart/30min",
+        "description": "Access stock price and volume data with the FMP 30-Minute Interval Stock Chart API. Retrieve essential stock data in 30-minute intervals, including open, high, low, close prices, and trading volume. This API is perfect for creating intraday charts and tracking medium-term price movements for more strategic trading decisions.",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1hr": {
+        "path": "historical-chart/1hour",
+        "description": "Track stock price movements over hourly intervals with the FMP 1-Hour Interval Stock Chart API. Access essential stock price and volume data, including open, high, low, and close prices for each hour, to analyze broader intraday trends with precision.",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_4hour": {
+        "path": "historical-chart/4hour",
+        "description": "Analyze stock price movements over extended intraday periods with the FMP 4-Hour Interval Stock Chart API. Access key stock price and volume data in 4-hour intervals, perfect for tracking longer intraday trends and understanding broader market movements.",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Company": {
+      "profile": {
+        "path": "profile",
+        "description": "Access detailed company profile data with the FMP Company Profile Data API. This API provides key financial and operational information for a specific stock symbol, including the company's market capitalization, stock price, industry, and much more.",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "profile_cik": {
+        "path": "profile-cik",
+        "description": "",
+        "required_params": [
+          "cik"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "company_notes": {
+        "path": "company-notes",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "stock_peers": {
+        "path": "stock-peers",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "delisted_companies": {
+        "path": "delisted-companies",
+        "description": "Stay informed with the FMP Delisted Companies API. Access a comprehensive list of companies that have been delisted from US exchanges to avoid trading in risky stocks and identify potential financial troubles.",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "employee_count": {
+        "path": "employee-count",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_employee_count": {
+        "path": "historical-employee-count",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "market_capitalization": {
+        "path": "market-capitalization",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "market_capitalization_batch": {
+        "path": "market-capitalization-batch",
+        "description": "",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_market_capitalization": {
+        "path": "historical-market-capitalization",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "shares_float": {
+        "path": "shares-float",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "shares_float_all": {
+        "path": "shares-float-all",
+        "description": "",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "mergers_acquistions_latest": {
+        "path": "mergers-acquisitions-latest",
+        "description": "",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "mergers_acquisitions_search": {
+        "path": "mergers-acquisitions-search",
+        "description": "",
+        "required_params": [
+          "name"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "key_executives": {
+        "path": "key-executives",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "governance_executive_compensation": {
+        "path": "governance-executive-compensation",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "executive_compensation_benchmark": {
+        "path": "",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Economics": {
+      "treasury_rates": {
+        "path": "treasury-rates",
+        "description": "",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "economic_indicators": {
+        "path": "economic-indicators",
+        "description": "",
+        "required_params": [
+          "name"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "economic_calendar": {
+        "path": "economic-calendar",
+        "description": "",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "market_risk_premium": {
+        "path": "market-risk-premium",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Funds": {
+      "holdings": {
+        "path": "etf/holdings",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "info": {
+        "path": "etf/info",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "country_weightings": {
+        "path": "etf/country-weightings",
+        "description": "Gain insights into how ETFs and mutual funds distribute assets across different countries with the FMP ETF & Fund Country Allocation API. This tool provides detailed information on the percentage of assets allocated to various regions, helping you make informed invest decisions",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "asset_exposure": {
+        "path": "etf/asset-exposure",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sector_weightings": {
+        "path": "etf/sector-weightings",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "latest_holders_disclosure": {
+        "path": "funds/disclosure-holders-latest",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "disclosures": {
+        "path": "funds/disclosures",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "year",
+          "quarter"
+        ],
+        "optional_params": [
+          "cik"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "search_holders_disclosures": {
+        "path": "funds/disclosures-holders-search",
+        "description": "",
+        "required_params": [
+          "name"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "disclosure_dates": {
+        "path": "funds/disclosure_dates",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Commodities": {
+      "commodities_list": {
+        "path": "commodities-list",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote": {
+        "path": "quote",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote_short": {
+        "path": "quote-short",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_commodity_quotes": {
+        "path": "batch-commodity-quotes",
+        "description": "",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Earnings_Transcripts": {
+      "earning_call_transcript_latest": {
+        "path": "earning-call-transcript-latest",
+        "description": "",
+        "required_params": [],
+        "optional_params": [
+          "limit",
+          "page"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "earning_call_transcript": {
+        "path": "earning-call-transcript",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "year",
+          "quarter"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "earning_call_transcript_dates": {
+        "path": "earning-call-transcript-dates",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "earnings_transcript_list": {
+        "path": "earnings-transcript-list",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Financials": {
+      "income_statement": {
+        "path": "income-statement",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "balance_sheet_statement": {
+        "path": "balance-sheet-statement",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "cash_flow_statement": {
+        "path": "cash-flow-statement",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "latest_financial_statements": {
+        "path": "latest-financial-statements",
+        "description": "",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "income_statement_ttm": {
+        "path": "income-statement-ttm",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "balance_sheet_statement_ttm": {
+        "path": "balance-sheet-statement-ttm",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "cash_flow_statement_ttm": {
+        "path": "cash-flow-statement-ttm",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "key_metrics": {
+        "path": "key-metrics",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "ratios": {
+        "path": "ratios",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "key_metric_ttm": {
+        "path": "key-metric-ttm",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "ratio_ttm": {
+        "path": "ratio-ttm",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "financial_scores": {
+        "path": "financial-scores",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "owner_earnings": {
+        "path": "owner-earnings",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "enterprise_values": {
+        "path": "enterprise-values",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "income_statement_growth": {
+        "path": "income-statement-growth",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "balance_sheet_statement_growth": {
+        "path": "balance-sheet-statement-growth",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "cash_flow_statement_growth": {
+        "path": "cash-flow-statement-growth",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "financial_statement_growth": {
+        "path": "financial-statement-growth",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "financial_reports_dates": {
+        "path": "financial-reports-dates",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "revenue_product_segmentation": {
+        "path": "revenue-product-segmentation",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "period",
+          "structure"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "revenue_geographic_segmentation": {
+        "path": "revenue-geographic-segmentation",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "period",
+          "structure"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "income_statement_as_reported": {
+        "path": "income-statement-as-reported",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "balance_sheet_as_reported": {
+        "path": "balance-sheet-as-reported",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "cash_flow_statement_as_reported": {
+        "path": "cash-flow-statement-as-reported",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "financial_statement_full_as_reported": {
+        "path": "financial-statement-full-as-reported",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Indexes": {
+      "index_list": {
+        "path": "index-list",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote": {
+        "path": "quote",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote_short": {
+        "path": "quote-short",
+        "description": "",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "LIMITED",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_index_quotes": {
+        "path": "batch-index-quotes",
+        "description": "",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sp500_constituent": {
+        "path": "sp500-constituent",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "nasdaq_constituent": {
+        "path": "nasdaq-constituent",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "dowjones_constituent": {
+        "path": "dowjones-constituent",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_sp500_constituent": {
+        "path": "historical-sp500-constituent",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_nasdaq_constituent": {
+        "path": "historical-nasdaq-constituent",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_dowjones_constituent": {
+        "path": "historical-dowjones-constituent",
+        "description": "",
+        "required_params": [],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Bulk": {
+      "company_profiles": {
+        "path": "profile-bulk",
+        "description": "The FMP Profile Bulk API allows users to retrieve comprehensive company profile data in bulk.",
+        "required_params": [
+          "part"
+        ],
+        "optional_params": [],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Technical_Indicators": {
+      "simple_moving_average": {
+        "path": "technical-indicator/sma",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "exponential_moving_average": {
+        "path": "technical-indicator/ema",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "weighted_moving_average": {
+        "path": "technical-indicator/wma",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "double_exponential_moving_average": {
+        "path": "technical-indicator/dema",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "triple_exponential_moving_average": {
+        "path": "technical-indicator/tema",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "relative_strength_index": {
+        "path": "technical-indicator/rsi",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "standard_deviation": {
+        "path": "technical-indicator/standarddeviation",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "williams": {
+        "path": "technical-indicator/williams",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "average_directional_index": {
+        "path": "technical-indicator/adx",
+        "description": "",
+        "required_params": [
+          "symbol",
+          "periodLength",
+          "timeframe"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "NO_ACCESS",
+          "STARTER": "LIMITED",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Market_Hours": {
+      "exchange_market_hours": {
+        "path": "exchange-market-hours",
+        "description": "Retrieve trading hours for specific stock exchanges using the Global Exchange Market Hours API. Find out the opening and closing times of global exchanges to plan your trading strategies effectively.",
+        "required_params": [
+          "exchange"
+        ],
+        "optional_params": [
+          "timestamp"
+        ],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "market_holidays": {
+        "path": "holidays-by-exchange",
+        "description": "Retrieve a list of market holidays and non-trading days for a specific stock exchange using the Holidays By Exchange API. Plan your trading schedule by knowing exactly when exchanges like NASDAQ, NYSE, and others are closed.",
+        "required_params": [
+          "exchange"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "all_exchanges_market_hours": {
+        "path": "all-exchange-market-hours",
+        "description": "View the market hours for all exchanges. Check when different markets are active.",
+        "required_params": [],
+        "optional_params": [
+          "timestamp"
+        ],
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    }
+  }
+}
