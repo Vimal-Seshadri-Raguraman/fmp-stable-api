@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fmp-stable-api"
-version = "2.0.1"
+version = "2.0.2"
 description = "Financial Modeling Prep API client — auto-updating endpoints, GUI, and MCP server"
 readme = "README.md"
 requires-python = ">=3.7"
