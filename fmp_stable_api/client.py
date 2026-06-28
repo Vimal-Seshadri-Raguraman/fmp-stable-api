@@ -176,9 +176,16 @@ class FMP:
         self._minute_limit = minute_limit
         self._rate_limiter = RateLimiter(minute_limit)
 
-        # Load config and derive base URL
+        # Load config and derive base URL; auto-refresh if cache is stale (>24h)
         self._config = load_config()
         self._base_url = get_base_url(self._config)
+        try:
+            from .updater import update_endpoints
+            if update_endpoints():
+                self._config = load_config()
+                self._base_url = get_base_url(self._config)
+        except Exception:
+            pass
 
         # HTTP session with retry
         self._session = self._build_session()
