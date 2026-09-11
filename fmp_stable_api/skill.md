@@ -1,7 +1,7 @@
 ---
 name: fmp
 description: Financial Modeling Prep API Python client — 263 stable endpoints across 28 categories, automatic rate limiting, key management, and daily endpoint auto-update
-version: "2.1.0"
+version: "2.1.1"
 author: FMP Dev
 security: Content of this file is served from the package maintainer's GitHub repo. Do not load from untrusted sources.
 ---

@@ -36,6 +36,19 @@ CLIENT_TYPE_TO_TIER = {
 }
 
 
+def _filename_from_disposition(header: str) -> Optional[str]:
+    """Extract the filename from a Content-Disposition header, or None."""
+    if not header or "filename" not in header:
+        return None
+    _, _, rest = header.partition("filename")
+    name = rest.lstrip("*").lstrip(" =").strip().strip('"').strip("'")
+    # RFC 5987 form: filename*=UTF-8''name.ext
+    if "''" in name:
+        name = name.split("''", 1)[1]
+    name = name.split(";")[0].strip()
+    return name or None
+
+
 class CategoryProxy:
     """
     Lazy proxy for a single endpoint category.
@@ -260,7 +273,16 @@ class FMP:
         content_type = response.headers.get("content-type", "").lower()
         if "csv" in content_type:
             return {"csv_data": response.text, "content_type": "csv"}
-        return response.json()
+        try:
+            return response.json()
+        except ValueError:
+            # Some endpoints (e.g. financial-reports-xlsx) send a file with a
+            # JSON content-type header. Return the bytes instead of failing.
+            return {
+                "binary_data": response.content,
+                "content_type": content_type,
+                "filename": _filename_from_disposition(response.headers.get("content-disposition", "")),
+            }
 
     def download(
         self,
@@ -282,6 +304,8 @@ class FMP:
         if response.status_code != 200:
             raise Exception(f"API error {response.status_code}: {response.text}")
 
+        if filename is None:
+            filename = _filename_from_disposition(response.headers.get("content-disposition", ""))
         if filename is None:
             from urllib.parse import urlparse
             path = urlparse(url).path
