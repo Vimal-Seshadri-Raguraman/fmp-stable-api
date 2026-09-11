@@ -19,8 +19,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install build
-        run: pip install build
+      - name: Install package and test dependencies
+        run: pip install -e . pytest build
+
+      - name: Run tests
+        run: pytest tests -q
 
       - name: Build package
         run: python -m build

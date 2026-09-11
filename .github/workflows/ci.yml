@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package and test dependencies
+        run: pip install -e . pytest
+
+      - name: Run tests
+        run: pytest tests -q
+
+      - name: Validate endpoint config
+        run: |
+          python - <<'PY'
+          import json
+          cfg = json.load(open("fmp_stable_api/fmp_endpoints.json"))
+          assert cfg["stable_url"].startswith("https://financialmodelingprep.com/")
+          n = sum(len(v) for v in cfg["endpoints"].values())
+          for cat, eps in cfg["endpoints"].items():
+              for name, e in eps.items():
+                  assert e["path"], f"{cat}.{name} has empty path"
+                  assert isinstance(e["required_params"], list) and isinstance(e["optional_params"], list), f"{cat}.{name}"
+          print(f"ok: {n} endpoints in {len(cfg['endpoints'])} categories")
+          PY

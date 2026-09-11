@@ -17,8 +17,6 @@ build/
 .ipynb_checkpoints/
 *.log
 
-# Tests
-tests/
 
 # User cache
 .fmp/
@@ -33,3 +31,6 @@ deactivate.sh
 # IDE
 .vscode/
 .idea/
+
+# Interactive scratch notebooks (outputs are cached data, not source)
+tests/*.ipynb

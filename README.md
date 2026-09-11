@@ -55,7 +55,7 @@ fmp-gui
 ## MCP server (Claude Desktop / AI assistants)
 
 ```bash
-pip install fmp[mcp]
+pip install fmp-stable-api[mcp]
 ```
 
 Add to your Claude Desktop `claude_desktop_config.json`:
