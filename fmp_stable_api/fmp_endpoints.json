@@ -1,5 +1,6 @@
 {
   "Introduction": "All of the endpoints for the FMP API and params for each endpoint that indicates if the endpoint is required or not",
+  "last_updated": "2026-09-10",
   "stable_url": "https://financialmodelingprep.com/stable/",
   "endpoints": {
     "Search": {
