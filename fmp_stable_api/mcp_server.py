@@ -2,7 +2,7 @@
 """
 FMP MCP Server — exposes every FMP endpoint as an MCP tool.
 
-Install:  pip install fmp[mcp]
+Install:  pip install fmp-stable-api[mcp]
 Run:      fmp-mcp
 
 Required env:
@@ -104,7 +104,7 @@ def main():
         from mcp.server import NotificationOptions, Server
         from mcp.server.models import InitializationOptions
     except ImportError:
-        print("Error: run  pip install fmp[mcp]  to use the MCP server.", file=sys.stderr)
+        print("Error: run  pip install fmp-stable-api[mcp]  to use the MCP server.", file=sys.stderr)
         sys.exit(1)
 
     api_key = os.environ.get("FMP_API_KEY")
