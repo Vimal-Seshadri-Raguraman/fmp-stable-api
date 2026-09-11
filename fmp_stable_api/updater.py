@@ -92,6 +92,15 @@ def get_skill_md_path() -> str:
     return SKILL_CACHE if os.path.exists(SKILL_CACHE) else BUNDLED_SKILL
 
 
+def get_skill() -> str:
+    """
+    Return the contents of skill.md — usage instructions for this client,
+    written for AI agents. Reads the cached copy if present, else the bundled one.
+    """
+    with open(get_skill_md_path(), "r", encoding="utf-8") as f:
+        return f.read()
+
+
 def update_endpoints(force: bool = False) -> bool:
     """
     Check GitHub for updated endpoints and skill.md; download if stale.

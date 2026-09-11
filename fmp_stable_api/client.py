@@ -319,6 +319,15 @@ class FMP:
                 del self.__dict__[k]
         return updated
 
+    def get_skill(self) -> str:
+        """
+        Return skill.md as a string: instructions on how to use this client,
+        its categories, parameters, keys, and rate limits. Intended to be handed
+        to an AI agent as context.
+        """
+        from .updater import get_skill
+        return get_skill()
+
     def help(self) -> None:
         config = load_config()
         print(f"\n{'='*70}")
@@ -333,4 +342,5 @@ class FMP:
         print("  client.CategoryName.endpoint_name(...) call an endpoint")
         print("  client.request(url, params)            raw URL request")
         print("  client.update_endpoints(force=True)    force refresh from GitHub")
+        print("  client.get_skill()                     usage guide (skill.md) as a string")
         print(f"{'='*70}\n")

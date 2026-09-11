@@ -1,6 +1,6 @@
 {
   "Introduction": "All of the endpoints for the FMP API and params for each endpoint that indicates if the endpoint is required or not",
-  "last_updated": "2026-09-10",
+  "last_updated": "2026-09-11T03:44:08Z",
   "stable_url": "https://financialmodelingprep.com/stable/",
   "endpoints": {
     "Search": {
@@ -13,7 +13,7 @@
           "limit",
           "exchange"
         ],
-        "description": "Easily find the ticker symbol of any stock with the FMP Stock Symbol Search API. Search by company name or symbol across multiple global markets.",
+        "description": "Easily find the ticker symbol of any stock with the FMP Stock Symbol Search API. Search by symbol across multiple global markets.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -30,7 +30,7 @@
           "limit",
           "exchange"
         ],
-        "description": "Search for ticker symbols, company names, and exchange details for equity securities and ETFs listed on various exchanges with the FMP Name Search API. This endpoint is useful for retrieving ticker symbols when you know the full or partial company or asset name but not the symbol identifies.",
+        "description": "Search for ticker symbols, company names, and exchange details for equity securities and ETFs listed on various exchanges with the FMP Name Search API. This endpoint is useful for retrieving ticker symbols when you know the full or partial company or asset name but not the symbol identifier.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -40,13 +40,13 @@
       },
       "search_cik": {
         "path": "search-cik",
-        "description": "Easily retrieve the Central Index Key (CIK) for publicly traded companies with the FMP CIK API. Access unique identifiers needed for SEC filings and regulatory documents for a streamlined compliance and financial analysis process.",
         "required_params": [
           "cik"
         ],
         "optional_params": [
           "limit"
         ],
+        "description": "Easily retrieve the Central Index Key (CIK) for publicly traded companies with the FMP CIK API. Access unique identifiers needed for SEC filings and regulatory documents for a streamlined compliance and financial analysis process.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -56,11 +56,11 @@
       },
       "search_cusip": {
         "path": "search-cusip",
-        "description": "Easily search and retrieve financial securities information by CUSIP number using the FMP CUSIP API. Find key details such as company name, stock symbol, and market capitalization associated with the CUSIP.",
         "required_params": [
           "cusip"
         ],
         "optional_params": [],
+        "description": "Easily search and retrieve financial securities information by CUSIP number using the FMP CUSIP API. Find key details such as company name, stock symbol, and market capitalization associated with the CUSIP.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "FULL",
@@ -70,11 +70,11 @@
       },
       "search_isin": {
         "path": "search-isin",
-        "description": "Easily search and retrieve the International Securities Identification Number (ISIN) for financial securities using the FMP ISIN API. Find key details such as company name, stock symbol, and markete capitalizaiton associated with the ISIN.",
         "required_params": [
           "isin"
         ],
         "optional_params": [],
+        "description": "Easily search and retrieve the International Securities Identification Number (ISIN) for financial securities using the FMP ISIN API. Find key details such as company name, stock symbol, and market capitalization associated with the ISIN.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "FULL",
@@ -84,6 +84,7 @@
       },
       "company_screener": {
         "path": "company-screener",
+        "required_params": [],
         "optional_params": [
           "marketCapMoreThan",
           "marketCapLowerThan",
@@ -97,16 +98,18 @@
           "dividendLowerThan",
           "volumeMoreThan",
           "volumeLowerThan",
+          "avgVolumeMoreThan",
+          "avgVolumeLowerThan",
           "exchange",
           "country",
           "isEtf",
           "isFund",
           "isActivelyTrading",
+          "page",
           "limit",
           "includeAllShareClasses"
         ],
-        "required_params": [],
-        "description": "Discover stocks that align with your investment strategy using the FMP Stock Screener API. Filter stocks based on market cap, price, volume, beta, sector, country, and more to identify the best investment opportunities.",
+        "description": "Discover stocks that align with your investment strategy using the FMP Stock Screener API. Filter stocks based on market cap, price, volume, beta, sector, country, and more to identify the best opportunities.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -115,7 +118,7 @@
         }
       },
       "search_exchange_variant": {
-        "path": "search-exchange-variant",
+        "path": "search-exchange-variants",
         "required_params": [
           "symbol"
         ],
@@ -132,7 +135,9 @@
     "Directory": {
       "company_symbols_list": {
         "path": "stock-list",
-        "description": "Easily retrieve a comprehensive list of financial symbols with the FMP Company Symbol List API. Access a broad range of stocks and other tradable financial instruments from various global exchanges, helping you explore the full range of available securities",
+        "required_params": [],
+        "optional_params": [],
+        "description": "Easily retrieve a comprehensive list of financial symbols with the FMP Company Symbols List API. Access a broad range of stock symbols and other tradable financial instruments from various global exchanges, helping you explore the full range of available securities.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -142,6 +147,8 @@
       },
       "financial_statement_symbol_list": {
         "path": "financial-statement-symbol-list",
+        "required_params": [],
+        "optional_params": [],
         "description": "Access a comprehensive list of companies with available financial statements through the FMP Financial Statement Symbols List API. Find companies listed on major global exchanges and obtain up-to-date financial data including income statements, balance sheets, and cash flow statements, are provided.",
         "access": {
           "FREE": "NO_ACCESS",
@@ -167,12 +174,12 @@
       },
       "symbol_change": {
         "path": "symbol-change",
-        "description": "Stay informed about the latest stock symbol changes with the FMP Stock Symbol Changes API. Track changes due to mergers, acquisitions, stock splits, and name changes to ensure accurate trading and analysis.",
         "required_params": [],
         "optional_params": [
           "invalid",
           "limit"
         ],
+        "description": "Stay informed about the latest stock symbol changes with the FMP Stock Symbol Changes API. Track changes due to mergers, acquisitions, stock splits, and name changes to ensure accurate trading and analysis.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "FULL",
@@ -182,6 +189,8 @@
       },
       "etf_list": {
         "path": "etf-list",
+        "required_params": [],
+        "optional_params": [],
         "description": "Quickly find ticker symbols and company names for Exchange Traded Funds (ETFs) using the FMP ETF Symbol Search API. This tool simplifies identifying specific ETFs by their name or ticker.",
         "access": {
           "FREE": "NO_ACCESS",
@@ -192,6 +201,8 @@
       },
       "actively_trading_list": {
         "path": "actively-trading-list",
+        "required_params": [],
+        "optional_params": [],
         "description": "List all actively trading companies and financial instruments with the FMP Actively Trading List API. This endpoint allows users to filter and display securities that are currently being traded on public exchanges, ensuring you access real-time market activity.",
         "access": {
           "FREE": "NO_ACCESS",
@@ -202,6 +213,8 @@
       },
       "earnings_transcript_list": {
         "path": "earnings-transcript-list",
+        "required_params": [],
+        "optional_params": [],
         "description": "Access available earnings transcripts for companies with the FMP Earnings Transcript List API. Retrieve a list of companies with earnings transcripts, along with the total number of transcripts available for each company.",
         "access": {
           "FREE": "NO_ACCESS",
@@ -212,6 +225,10 @@
       },
       "available_exchanges": {
         "path": "available-exchanges",
+        "required_params": [],
+        "optional_params": [
+          "extended"
+        ],
         "description": "Access a complete list of supported stock exchanges using the FMP Available Exchanges API. This API provides a comprehensive overview of global stock exchanges, allowing users to identify where securities are traded and filter data by specific exchanges for further analysis.",
         "access": {
           "FREE": "NO_ACCESS",
@@ -222,6 +239,8 @@
       },
       "available_sectors": {
         "path": "available-sectors",
+        "required_params": [],
+        "optional_params": [],
         "description": "Access a complete list of industry sectors using the FMP Available Sectors API. This API helps users categorize and filter companies based on their respective sectors, enabling deeper analysis and more focused queries across different industries.",
         "access": {
           "FREE": "NO_ACCESS",
@@ -232,6 +251,8 @@
       },
       "available_industries": {
         "path": "available-industries",
+        "required_params": [],
+        "optional_params": [],
         "description": "Access a comprehensive list of industries where stock symbols are available using the FMP Available Industries API. This API helps users filter and categorize companies based on their industry for more focused research and analysis.",
         "access": {
           "FREE": "NO_ACCESS",
@@ -242,6 +263,8 @@
       },
       "available_countries": {
         "path": "available-countries",
+        "required_params": [],
+        "optional_params": [],
         "description": "Access a comprehensive list of countries where stock symbols are available with the FMP Available Countries API. This API enables users to filter and analyze stock symbols based on the country of origin or the primary market where the securities are traded.",
         "access": {
           "FREE": "NO_ACCESS",
@@ -260,7 +283,7 @@
         "optional_params": [
           "limit"
         ],
-        "description": "Stay informed about upcoming dividend payments with the FMP Dividends Company API. This API provides essential dividend data for individual stock symbols, including record dates, payments dates, declaration dates, and more.",
+        "description": "Stay informed about upcoming dividend payments with the FMP Dividends Company API. This API provides essential dividend data for individual stock symbols, including record dates, payment dates, declaration dates, and more.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -273,7 +296,8 @@
         "required_params": [],
         "optional_params": [
           "from",
-          "to"
+          "to",
+          "page"
         ],
         "description": "Stay informed on upcoming dividend events with the Dividend Events Calendar API. Access a comprehensive schedule of dividend-related dates for all stocks, including record dates, payment dates, declaration dates, and dividend yields.",
         "access": {
@@ -289,7 +313,8 @@
           "symbol"
         ],
         "optional_params": [
-          "limit"
+          "limit",
+          "includeReportTimes"
         ],
         "description": "Retrieve in-depth earnings information with the FMP Earnings Report API. Gain access to key financial data for a specific stock symbol, including earnings report dates, EPS estimates, and revenue projections to help you stay on top of company performance.",
         "access": {
@@ -304,9 +329,11 @@
         "required_params": [],
         "optional_params": [
           "from",
-          "to"
+          "to",
+          "page",
+          "includeReportTimes"
         ],
-        "description": "Stay informed on upcoming and past earnings announcements with the FMP Earnings Calendar API. Access key data including announcement dates, estimated earnings per share (EPS), and actual EPS for publicly traded companies.",
+        "description": "Stay informed on upcoming and past earnings announcements with the FMP Earnings Calendar API. Access key data, including announcement dates, estimated earnings per share (EPS), and actual EPS for publicly traded companies.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -321,7 +348,7 @@
           "from",
           "to"
         ],
-        "description": "Access a comprehensive list of all upcoming initial public offerings (IPOs) with the FMP IPO Calendar API. Stay upto date on the latest companies entering the public market, with essential details on IPO dates, company names, expected pricing, and exchange listings.",
+        "description": "Access a comprehensive list of all upcoming initial public offerings (IPOs) with the FMP IPO Calendar API. Stay up to date on the latest companies entering the public market, with essential details on IPO dates, company names, expected pricing, and exchange listings.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "FULL",
@@ -336,7 +363,7 @@
           "from",
           "to"
         ],
-        "description": "Access a comprehensive list of disclosure filings for upcoming initial public offerings (IPOs) with the FMP IPO Disclosure API. Stay updated on regulatory filings, including filing dates, effectiveness dates, CIK numbers, and form types, with direct links to official SEC documents.",
+        "description": "Access a comprehensive list of disclosure filings for upcoming initial public offerings (IPOs) with the FMP IPO Disclosures API. Stay updated on regulatory filings, including filing dates, effectiveness dates, CIK numbers, and form types, with direct links to official SEC documents.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "FULL",
@@ -361,13 +388,13 @@
       },
       "stock_splits": {
         "path": "splits",
-        "description": "Access detailed information on stock splits for a specific company using the FMP Stock Split Details API. This API provides essential data, including the split date and the split ratio, helping users understand changes in a company's share structure after a stock split.",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "limit"
         ],
+        "description": "Access detailed information on stock splits for a specific company using the FMP Stock Split Details API. This API provides essential data, including the split date and the split ratio, helping users understand changes in a company's share structure after a stock split.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -377,12 +404,13 @@
       },
       "stock_split_calendar": {
         "path": "splits-calendar",
-        "description": "Stay informed about upcoming stock splits with the FMP Stock Splits Calendar API. This API provides essential data on upcoming stock splits across multiple companies, including the split date and ratio, helping you track changes in share structures before the occur",
         "required_params": [],
         "optional_params": [
           "from",
-          "to"
+          "to",
+          "page"
         ],
+        "description": "Stay informed about upcoming stock splits with the FMP Stock Splits Calendar API. This API provides essential data on upcoming stock splits across multiple companies, including the split date and ratio, helping you track changes in share structures before they occur.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -394,7 +422,6 @@
     "Chart": {
       "light": {
         "path": "historical-price-eod/light",
-        "description": "Access simplified stock chart data using the FMP Basic Stock Chart API. This API provides essential charting information, including date, price, and trading volume, making it ideal for tracking stock performance with minimal data and creating basic price and volume chart",
         "required_params": [
           "symbol"
         ],
@@ -402,6 +429,7 @@
           "from",
           "to"
         ],
+        "description": "Access simplified stock chart data using the FMP Basic Stock Chart API. This API provides essential charting information, including date, price, and trading volume, making it ideal for tracking stock performance with minimal data and creating basic price and volume charts.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -411,7 +439,6 @@
       },
       "full": {
         "path": "historical-price-eod/full",
-        "description": "Access full price and volume data for any stock symbol using the FMP Comprehensive Stock Price and Volume Data API. Get detailed insights, including open, high, low, close prices, trading volume, price changes, percentage changes, and volume-weighted average price (VWAP)",
         "required_params": [
           "symbol"
         ],
@@ -419,6 +446,7 @@
           "from",
           "to"
         ],
+        "description": "Access full price and volume data for any stock symbol using the FMP Comprehensive Stock Price and Volume Data API. Get detailed insights, including open, high, low, close prices, trading volume, price changes, percentage changes, and volume-weighted average price (VWAP).",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -428,7 +456,6 @@
       },
       "unadjusted": {
         "path": "historical-price-eod/non-split-adjusted",
-        "description": "Access stock price and volume data without adjustments for stock splits with the FMP Unadjusted Stock Price Chart API. Get accurate insights into stock performance, including open, high, low, and close prices, along with trading volume, without split-related changes",
         "required_params": [
           "symbol"
         ],
@@ -436,6 +463,7 @@
           "from",
           "to"
         ],
+        "description": "Access stock price and volume data without adjustments for stock splits with the FMP Unadjusted Stock Price Chart API. Get accurate insights into stock performance, including open, high, low, and close prices, along with trading volume, without split-related changes.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -445,7 +473,6 @@
       },
       "dividend_adjusted": {
         "path": "historical-price-eod/dividend-adjusted",
-        "description": "Analyze stock performance with dividend adjustments using the FMP Dividend-Adjusted-Price Chart API. Access end-of-day price and volume data that accounts for dividend payouts, offering a more comprehensive view of stock trends over time",
         "required_params": [
           "symbol"
         ],
@@ -453,6 +480,7 @@
           "from",
           "to"
         ],
+        "description": "Analyze stock performance with dividend adjustments using the FMP Dividend-Adjusted Price Chart API. Access end-of-day price and volume data that accounts for dividend payouts, offering a more comprehensive view of stock trends over time.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -462,15 +490,16 @@
       },
       "intraday_1min": {
         "path": "historical-chart/1min",
-        "description": "Access precise intraday stock price and volume data with the FMP 1-Minute Interval Stock Chart API. Retrieve real-time or historical stock data in 1-minute intervals, including key information such as open, high, low, and close prices, and trading volume for each minute.",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "from",
           "to",
-          "nonadjusted"
+          "nonadjusted",
+          "extended"
         ],
+        "description": "Access precise intraday stock price and volume data with the FMP 1-Minute Interval Stock Chart API. Retrieve real-time or historical stock data in 1-minute intervals, including key information such as open, high, low, and close prices, and trading volume for each minute.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -480,15 +509,16 @@
       },
       "intraday_5min": {
         "path": "historical-chart/5min",
-        "description": "Access stock price and volume data with the FMP 5-Minute Interval Stock Chart API. Retrieve detailed stock data in 5-minute intervals, including open, high, low, and close prices, along with trading volume for each 5-minute period. This API is perfect for short-term trading analysis and building intraday charts",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "from",
           "to",
-          "nonadjusted"
+          "nonadjusted",
+          "extended"
         ],
+        "description": "Access stock price and volume data with the FMP 5-Minute Interval Stock Chart API. Retrieve detailed stock data in 5-minute intervals, including open, high, low, and close prices, along with trading volume for each 5-minute period. This API is perfect for short-term trading analysis and building intraday charts.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -498,15 +528,16 @@
       },
       "intraday_15min": {
         "path": "historical-chart/15min",
-        "description": "Access stock price and volume data with the FMP 15-Minute Interval Stock Chart API. Retrieve detailed stock data in 15-minute intervals, including open, high, low, close prices, and trading volume. This API is ideal for creating intraday charts and analyzing medium-term price trends during the trading day.",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "from",
           "to",
-          "nonadjusted"
+          "nonadjusted",
+          "extended"
         ],
+        "description": "Access stock price and volume data with the FMP 15-Minute Interval Stock Chart API. Retrieve detailed stock data in 15-minute intervals, including open, high, low, close prices, and trading volume. This API is ideal for creating intraday charts and analyzing medium-term price trends during the trading day.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -516,15 +547,16 @@
       },
       "intraday_30min": {
         "path": "historical-chart/30min",
-        "description": "Access stock price and volume data with the FMP 30-Minute Interval Stock Chart API. Retrieve essential stock data in 30-minute intervals, including open, high, low, close prices, and trading volume. This API is perfect for creating intraday charts and tracking medium-term price movements for more strategic trading decisions.",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "from",
           "to",
-          "nonadjusted"
+          "nonadjusted",
+          "extended"
         ],
+        "description": "Access stock price and volume data with the FMP 30-Minute Interval Stock Chart API. Retrieve essential stock data in 30-minute intervals, including open, high, low, close prices, and trading volume. This API is perfect for creating intraday charts and tracking medium-term price movements for more strategic trading decisions.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -534,15 +566,16 @@
       },
       "intraday_1hr": {
         "path": "historical-chart/1hour",
-        "description": "Track stock price movements over hourly intervals with the FMP 1-Hour Interval Stock Chart API. Access essential stock price and volume data, including open, high, low, and close prices for each hour, to analyze broader intraday trends with precision.",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "from",
           "to",
-          "nonadjusted"
+          "nonadjusted",
+          "extended"
         ],
+        "description": "Track stock price movements over hourly intervals with the FMP 1-Hour Interval Stock Chart API. Access essential stock price and volume data, including open, high, low, and close prices for each hour, to analyze broader intraday trends with precision.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -552,15 +585,16 @@
       },
       "intraday_4hour": {
         "path": "historical-chart/4hour",
-        "description": "Analyze stock price movements over extended intraday periods with the FMP 4-Hour Interval Stock Chart API. Access key stock price and volume data in 4-hour intervals, perfect for tracking longer intraday trends and understanding broader market movements.",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "from",
           "to",
-          "nonadjusted"
+          "nonadjusted",
+          "extended"
         ],
+        "description": "Analyze stock price movements over extended intraday periods with the FMP 4-Hour Interval Stock Chart API. Access key stock price and volume data in 4-hour intervals, perfect for tracking longer intraday trends and understanding broader market movements.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -572,11 +606,11 @@
     "Company": {
       "profile": {
         "path": "profile",
-        "description": "Access detailed company profile data with the FMP Company Profile Data API. This API provides key financial and operational information for a specific stock symbol, including the company's market capitalization, stock price, industry, and much more.",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Access detailed company profile data with the FMP Company Profile Data API. This API provides key financial and operational information for a specific stock symbol, including the company's market capitalization, stock price, industry, and much more.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "FULL",
@@ -586,11 +620,11 @@
       },
       "profile_cik": {
         "path": "profile-cik",
-        "description": "",
         "required_params": [
           "cik"
         ],
         "optional_params": [],
+        "description": "Retrieve detailed company profile data by CIK (Central Index Key) with the FMP Company Profile by CIK API. This API allows users to search for companies using their unique CIK identifier and access a full range of company data, including stock price, market capitalization, industry, and much more.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -600,11 +634,11 @@
       },
       "company_notes": {
         "path": "company-notes",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Retrieve detailed information about company-issued notes with the FMP Company Notes API. Access essential data such as CIK number, stock symbol, note title, and the exchange where the notes are listed.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -614,11 +648,11 @@
       },
       "stock_peers": {
         "path": "stock-peers",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Identify and compare companies within the same sector and market capitalization range using the FMP Stock Peer Comparison API. Gain insights into how a company stacks up against its peers on the same exchange.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -628,12 +662,12 @@
       },
       "delisted_companies": {
         "path": "delisted-companies",
-        "description": "Stay informed with the FMP Delisted Companies API. Access a comprehensive list of companies that have been delisted from US exchanges to avoid trading in risky stocks and identify potential financial troubles.",
         "required_params": [],
         "optional_params": [
           "page",
           "limit"
         ],
+        "description": "Stay informed with the FMP Delisted Companies API. Access a comprehensive list of companies that have been delisted from stock exchanges to avoid trading in risky stocks and identify potential financial troubles.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -643,11 +677,13 @@
       },
       "employee_count": {
         "path": "employee-count",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit"
+        ],
+        "description": "Retrieve detailed workforce information for companies, including employee count, reporting period, and filing date. The FMP Company Employee Count API also provides direct links to official SEC documents for further verification and in-depth research.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "FULL",
@@ -657,11 +693,13 @@
       },
       "historical_employee_count": {
         "path": "historical-employee-count",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit"
+        ],
+        "description": "Access historical employee count data for a company based on specific reporting periods. The FMP Company Historical Employee Count API provides insights into how a company’s workforce has evolved over time, allowing users to analyze growth trends and operational changes.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "FULL",
@@ -671,11 +709,11 @@
       },
       "market_capitalization": {
         "path": "market-capitalization",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Retrieve the market capitalization for a specific company on any given date using the FMP Company Market Capitalization API. This API provides essential data to assess the size and value of a company in the stock market, helping users gauge its overall market standing.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -685,11 +723,11 @@
       },
       "market_capitalization_batch": {
         "path": "market-capitalization-batch",
-        "description": "",
         "required_params": [
           "symbols"
         ],
         "optional_params": [],
+        "description": "Retrieve market capitalization data for multiple companies in a single request with the FMP Batch Market Capitalization API. This API allows users to compare the market size of various companies simultaneously, streamlining the analysis of company valuations.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -699,11 +737,15 @@
       },
       "historical_market_capitalization": {
         "path": "historical-market-capitalization",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit",
+          "from",
+          "to"
+        ],
+        "description": "Access historical market capitalization data for a company using the FMP Historical Market Capitalization API. This API helps track the changes in market value over time, enabling long-term assessments of a company's growth or decline.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -713,11 +755,11 @@
       },
       "shares_float": {
         "path": "shares-float",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Understand the liquidity and volatility of a stock with the FMP Company Share Float and Liquidity API. Access the total number of publicly traded shares for any company to make informed investment decisions.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -727,12 +769,12 @@
       },
       "shares_float_all": {
         "path": "shares-float-all",
-        "description": "",
         "required_params": [],
         "optional_params": [
-          "page",
-          "limit"
+          "limit",
+          "page"
         ],
+        "description": "Access comprehensive shares float data for all available companies with the FMP All Shares Float API. Retrieve critical information such as free float, float shares, and outstanding shares to analyze liquidity across a wide range of companies.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -742,12 +784,12 @@
       },
       "mergers_acquistions_latest": {
         "path": "mergers-acquisitions-latest",
-        "description": "",
         "required_params": [],
         "optional_params": [
           "page",
           "limit"
         ],
+        "description": "Access real-time data on the latest mergers and acquisitions with the FMP Latest Mergers and Acquisitions API. This API provides key information such as the transaction date, company names, and links to detailed filing information for further analysis.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -757,11 +799,11 @@
       },
       "mergers_acquisitions_search": {
         "path": "mergers-acquisitions-search",
-        "description": "",
         "required_params": [
           "name"
         ],
         "optional_params": [],
+        "description": "Search for specific mergers and acquisitions data with the FMP Search Mergers and Acquisitions API. Retrieve detailed information on M&A activity, including acquiring and targeted companies, transaction dates, and links to official SEC filings.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -771,11 +813,11 @@
       },
       "key_executives": {
         "path": "key-executives",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Retrieve detailed information on company executives with the FMP Company Executives API. This API provides essential data about key executives, including their name, title, compensation, and other demographic details such as gender and year of birth.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -785,11 +827,11 @@
       },
       "governance_executive_compensation": {
         "path": "governance-executive-compensation",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Retrieve comprehensive compensation data for company executives with the FMP Executive Compensation API. This API provides detailed information on salaries, stock awards, total compensation, and other relevant financial data, including filing details and links to official documents.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -798,10 +840,12 @@
         }
       },
       "executive_compensation_benchmark": {
-        "path": "",
-        "description": "",
+        "path": "executive-compensation-benchmark",
         "required_params": [],
-        "optional_params": [],
+        "optional_params": [
+          "year"
+        ],
+        "description": "Gain access to average executive compensation data across various industries with the FMP Executive Compensation Benchmark API. This API provides essential insights for comparing executive pay by industry, helping you understand compensation trends and benchmarks.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -813,12 +857,12 @@
     "Economics": {
       "treasury_rates": {
         "path": "treasury-rates",
-        "description": "",
         "required_params": [],
         "optional_params": [
           "from",
           "to"
         ],
+        "description": "Access latest and historical Treasury rates for all maturities with the FMP Treasury Rates API. Track key benchmarks for interest rates across the economy.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -828,7 +872,6 @@
       },
       "economic_indicators": {
         "path": "economic-indicators",
-        "description": "",
         "required_params": [
           "name"
         ],
@@ -836,6 +879,7 @@
           "from",
           "to"
         ],
+        "description": "Access real-time and historical economic data for key indicators like GDP, unemployment, and inflation with the FMP Economic Indicators API. Use this data to measure economic performance and identify growth trends.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -845,12 +889,13 @@
       },
       "economic_calendar": {
         "path": "economic-calendar",
-        "description": "",
         "required_params": [],
         "optional_params": [
+          "country",
           "from",
           "to"
         ],
+        "description": "Stay informed with the FMP Economic Data Releases Calendar API. Access a comprehensive calendar of upcoming economic data releases to prepare for market impacts and make informed investment decisions.",
         "access": {
           "FREE": "FULL",
           "STARTER": "LIMITED",
@@ -860,9 +905,9 @@
       },
       "market_risk_premium": {
         "path": "market-risk-premium",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Access the market risk premium for specific dates with the FMP Market Risk Premium API. Use this key financial metric to assess the additional return expected from investing in the stock market over a risk-free investment.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -874,11 +919,11 @@
     "Funds": {
       "holdings": {
         "path": "etf/holdings",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Get a detailed breakdown of the assets held within ETFs and mutual funds using the FMP ETF & Fund Holdings API. Access real-time data on the specific securities and their weights in the portfolio, providing insights into asset composition and fund strategies.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -888,11 +933,11 @@
       },
       "info": {
         "path": "etf/info",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Access comprehensive data on ETFs and mutual funds with the FMP ETF & Mutual Fund Information API. Retrieve essential details such as ticker symbol, fund name, expense ratio, assets under management, and more.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "FULL",
@@ -902,11 +947,11 @@
       },
       "country_weightings": {
         "path": "etf/country-weightings",
-        "description": "Gain insights into how ETFs and mutual funds distribute assets across different countries with the FMP ETF & Fund Country Allocation API. This tool provides detailed information on the percentage of assets allocated to various regions, helping you make informed invest decisions",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Gain insight into how ETFs and mutual funds distribute assets across different countries with the FMP ETF & Fund Country Allocation API. This tool provides detailed information on the percentage of assets allocated to various regions, helping you make informed investment decisions.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "FULL",
@@ -916,11 +961,11 @@
       },
       "asset_exposure": {
         "path": "etf/asset-exposure",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Discover which ETFs hold specific stocks with the FMP ETF Asset Exposure API. Access detailed information on market value, share numbers, and weight percentages for assets within ETFs.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -930,11 +975,11 @@
       },
       "sector_weightings": {
         "path": "etf/sector-weightings",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "The FMP ETF Sector Weighting API provides a breakdown of the percentage of an ETF's assets that are invested in each sector. For example, an investor may want to invest in an ETF that has a high exposure to the technology sector if they believe that the technology sector is poised for growth.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "FULL",
@@ -944,11 +989,11 @@
       },
       "latest_holders_disclosure": {
         "path": "funds/disclosure-holders-latest",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Access the latest disclosures from mutual funds and ETFs with the FMP Mutual Fund & ETF Disclosure API. This API provides updates on filings, changes in holdings, and other critical disclosure data for mutual funds and ETFs.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -957,8 +1002,7 @@
         }
       },
       "disclosures": {
-        "path": "funds/disclosures",
-        "description": "",
+        "path": "funds/disclosure",
         "required_params": [
           "symbol",
           "year",
@@ -967,6 +1011,7 @@
         "optional_params": [
           "cik"
         ],
+        "description": "Access comprehensive disclosure data for mutual funds with the FMP Mutual Fund Disclosures API. Analyze recent filings, balance sheets, and financial reports to gain insights into mutual fund portfolios.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -975,12 +1020,12 @@
         }
       },
       "search_holders_disclosures": {
-        "path": "funds/disclosures-holders-search",
-        "description": "",
+        "path": "funds/disclosure-holders-search",
         "required_params": [
           "name"
         ],
         "optional_params": [],
+        "description": "Easily search for mutual fund and ETF disclosures by name using the Mutual Fund & ETF Disclosure Name Search API. This API allows you to find specific reports and filings based on the fund or ETF name, providing essential details like CIK number, entity information, and reporting file number.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -989,12 +1034,14 @@
         }
       },
       "disclosure_dates": {
-        "path": "funds/disclosure_dates",
-        "description": "",
+        "path": "funds/disclosure-dates",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "cik"
+        ],
+        "description": "Retrieve detailed disclosures for mutual funds and ETFs based on filing dates with the FMP Fund & ETF Disclosures by Date API. Stay current with the latest filings and track regulatory updates effectively.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1006,9 +1053,9 @@
     "Commodities": {
       "commodities_list": {
         "path": "commodities-list",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Access an extensive list of tracked commodities across various sectors, including energy, metals, and agricultural products. The FMP Commodities List API provides essential data on tradable commodities, giving investors the ability to explore market options.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -1018,11 +1065,11 @@
       },
       "quote": {
         "path": "quote",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Access price quotes for all commodities traded worldwide with the FMP Global Commodities API. Track market movements and identify investment opportunities with comprehensive price data.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1032,11 +1079,11 @@
       },
       "quote_short": {
         "path": "quote-short",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Get fast and accurate quotes for commodities with the FMP Commodities Quick Quote API. Instantly access the current price, recent changes, and trading volume for various commodities.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1046,14 +1093,105 @@
       },
       "batch_commodity_quotes": {
         "path": "batch-commodity-quotes",
-        "description": "",
         "required_params": [],
         "optional_params": [
           "short"
         ],
+        "description": "Access quotes for multiple commodities at once with the FMP Batch Commodities Quotes API. Instantly track price changes, volume, and other key metrics for a broad range of commodities.",
         "access": {
           "FREE": "FULL",
           "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "light": {
+        "path": "historical-price-eod/light",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access historical end-of-day prices for various commodities with the FMP Historical Commodities Price API. Analyze past price movements, trading volume, and trends to support informed decision-making.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "full": {
+        "path": "historical-price-eod/full",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access full historical end-of-day price data for commodities with the FMP Comprehensive Commodities Price API. This API enables users to analyze long-term price trends, patterns, and market movements in great detail.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1min": {
+        "path": "historical-chart/1min",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Track short-term price movements for commodities with the FMP 1-Minute Interval Commodities Chart API. This API provides detailed 1-minute interval data, enabling precise monitoring of intraday market changes.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_5min": {
+        "path": "historical-chart/5min",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Monitor short-term price movements with the FMP 5-Minute Interval Commodities Chart API. This API provides detailed 5-minute interval data, enabling users to track near-term price trends for more strategic trading and investment decisions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1hr": {
+        "path": "historical-chart/1hour",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Monitor hourly price movements and trends with the FMP 1-Hour Interval Commodities Chart API. This API provides hourly data, offering a detailed look at price fluctuations throughout the trading day to support mid-term trading strategies and market analysis.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
           "PREMIUM": "FULL",
           "ULTIMATE": "FULL"
         }
@@ -1062,12 +1200,12 @@
     "Earnings_Transcripts": {
       "earning_call_transcript_latest": {
         "path": "earning-call-transcript-latest",
-        "description": "",
         "required_params": [],
         "optional_params": [
           "limit",
           "page"
         ],
+        "description": "Access available earnings transcripts for companies with the FMP Latest Earning Transcripts API. Retrieve a list of companies with earnings transcripts, along with the total number of transcripts available for each company.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1077,7 +1215,6 @@
       },
       "earning_call_transcript": {
         "path": "earning-call-transcript",
-        "description": "",
         "required_params": [
           "symbol",
           "year",
@@ -1086,6 +1223,7 @@
         "optional_params": [
           "limit"
         ],
+        "description": "Access the full transcript of a company’s earnings call with the FMP Earnings Transcript API. Stay informed about a company’s financial performance, future plans, and overall strategy by analyzing management's communication.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1095,11 +1233,11 @@
       },
       "earning_call_transcript_dates": {
         "path": "earning-call-transcript-dates",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Access earnings call transcript dates for specific companies with the FMP Transcripts Dates By Symbol API. Get a comprehensive overview of earnings call schedules based on fiscal year and quarter.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1109,9 +1247,9 @@
       },
       "earnings_transcript_list": {
         "path": "earnings-transcript-list",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Access a complete list of stock symbols with available earnings call transcripts using the FMP Available Earnings Transcript Symbols API. Retrieve information on which companies have earnings transcripts and how many are accessible for detailed financial analysis.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1123,7 +1261,6 @@
     "Financials": {
       "income_statement": {
         "path": "income-statement",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1131,6 +1268,7 @@
           "limit",
           "period"
         ],
+        "description": "Access detailed income statement data for publicly traded companies with the Income Statements API. Track profitability, compare competitors, and identify business trends with up-to-date financial data.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1140,7 +1278,6 @@
       },
       "balance_sheet_statement": {
         "path": "balance-sheet-statement",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1148,6 +1285,7 @@
           "limit",
           "period"
         ],
+        "description": "Access detailed balance sheet statements for publicly traded companies with the Balance Sheet Data API. Analyze assets, liabilities, and shareholder equity to gain insights into a company's financial health.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1157,7 +1295,6 @@
       },
       "cash_flow_statement": {
         "path": "cash-flow-statement",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1165,6 +1302,7 @@
           "limit",
           "period"
         ],
+        "description": "Gain insights into a company's cash flow activities with the Cash Flow Statements API. Analyze cash generated and used from operations, investments, and financing activities to evaluate the financial health and sustainability of a business.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1174,12 +1312,12 @@
       },
       "latest_financial_statements": {
         "path": "latest-financial-statements",
-        "description": "",
         "required_params": [],
         "optional_params": [
           "page",
           "limit"
         ],
+        "description": "Latest Financial Statements",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1189,13 +1327,13 @@
       },
       "income_statement_ttm": {
         "path": "income-statement-ttm",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "limit"
         ],
+        "description": "Income Statements TTM",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1205,13 +1343,13 @@
       },
       "balance_sheet_statement_ttm": {
         "path": "balance-sheet-statement-ttm",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "limit"
         ],
+        "description": "Balance Sheet Statements TTM",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1221,13 +1359,13 @@
       },
       "cash_flow_statement_ttm": {
         "path": "cash-flow-statement-ttm",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [
           "limit"
         ],
+        "description": "Cashflow Statements TTM",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1237,11 +1375,14 @@
       },
       "key_metrics": {
         "path": "key-metrics",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "description": "Access essential financial metrics for a company with the FMP Financial Key Metrics API. Evaluate revenue, net income, P/E ratio, and more to assess performance and compare it to competitors.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1251,7 +1392,6 @@
       },
       "ratios": {
         "path": "ratios",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1259,6 +1399,7 @@
           "limit",
           "period"
         ],
+        "description": "Analyze a company's financial performance using the Financial Ratios API. This API provides detailed profitability, liquidity, and efficiency ratios, enabling users to assess a company's operational and financial health across various metrics.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1267,12 +1408,12 @@
         }
       },
       "key_metric_ttm": {
-        "path": "key-metric-ttm",
-        "description": "",
+        "path": "key-metrics-ttm",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Retrieve a comprehensive set of trailing twelve-month (TTM) key performance metrics with the TTM Key Metrics API. Access data related to a company's profitability, capital efficiency, and liquidity, allowing for detailed analysis of its financial health over the past year.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1281,12 +1422,12 @@
         }
       },
       "ratio_ttm": {
-        "path": "ratio-ttm",
-        "description": "",
+        "path": "ratios-ttm",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Gain access to trailing twelve-month (TTM) financial ratios with the TTM Ratios API. This API provides key performance metrics over the past year, including profitability, liquidity, and efficiency ratios.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1296,11 +1437,11 @@
       },
       "financial_scores": {
         "path": "financial-scores",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Assess a company's financial strength using the Financial Health Scores API. This API provides key metrics such as the Altman Z-Score and Piotroski Score, giving users insights into a company’s overall financial health and stability.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1310,11 +1451,13 @@
       },
       "owner_earnings": {
         "path": "owner-earnings",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit"
+        ],
+        "description": "Retrieve a company's owner earnings with the Owner Earnings API, which provides a more accurate representation of cash available to shareholders by adjusting net income. This metric is crucial for evaluating a company’s profitability from the perspective of investors.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1324,11 +1467,14 @@
       },
       "enterprise_values": {
         "path": "enterprise-values",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "description": "Access a company's enterprise value using the Enterprise Values API. This metric offers a comprehensive view of a company's total market value by combining both its equity (market capitalization) and debt, providing a better understanding of its worth.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1338,11 +1484,14 @@
       },
       "income_statement_growth": {
         "path": "income-statement-growth",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "description": "Track key financial growth metrics with the Income Statement Growth API. Analyze how revenue, profits, and expenses have evolved over time, offering insights into a company’s financial health and operational efficiency.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1352,11 +1501,14 @@
       },
       "balance_sheet_statement_growth": {
         "path": "balance-sheet-statement-growth",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "description": "Analyze the growth of key balance sheet items over time with the Balance Sheet Statement Growth API. Track changes in assets, liabilities, and equity to understand the financial evolution of a company.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1366,11 +1518,14 @@
       },
       "cash_flow_statement_growth": {
         "path": "cash-flow-statement-growth",
-        "description": "",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "description": "Measure the growth rate of a company’s cash flow with the FMP Cashflow Statement Growth API. Determine how quickly a company’s cash flow is increasing or decreasing over time.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1379,12 +1534,15 @@
         }
       },
       "financial_statement_growth": {
-        "path": "financial-statement-growth",
-        "description": "",
+        "path": "financial-growth",
         "required_params": [
           "symbol"
         ],
-        "optional_params": [],
+        "optional_params": [
+          "limit",
+          "period"
+        ],
+        "description": "Analyze the growth of key financial statement items across income, balance sheet, and cash flow statements with the Financial Statement Growth API. Track changes over time to understand trends in financial performance.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1394,11 +1552,11 @@
       },
       "financial_reports_dates": {
         "path": "financial-reports-dates",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Financial Reports Dates",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -1408,7 +1566,6 @@
       },
       "revenue_product_segmentation": {
         "path": "revenue-product-segmentation",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1416,6 +1573,7 @@
           "period",
           "structure"
         ],
+        "description": "Access detailed revenue breakdowns by product line with the Revenue Product Segmentation API. Understand which products drive a company's earnings and get insights into the performance of individual product segments.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1425,7 +1583,6 @@
       },
       "revenue_geographic_segmentation": {
         "path": "revenue-geographic-segmentation",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1433,6 +1590,7 @@
           "period",
           "structure"
         ],
+        "description": "Access detailed revenue breakdowns by geographic region with the Revenue Geographic Segments API. Analyze how different regions contribute to a company’s total revenue and identify key markets for growth.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1442,7 +1600,6 @@
       },
       "income_statement_as_reported": {
         "path": "income-statement-as-reported",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1450,6 +1607,7 @@
           "limit",
           "period"
         ],
+        "description": "Retrieve income statements as they were reported by the company with the As Reported Income Statements API. Access raw financial data directly from official company filings, including revenue, expenses, and net income.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "FULL",
@@ -1458,8 +1616,7 @@
         }
       },
       "balance_sheet_as_reported": {
-        "path": "balance-sheet-as-reported",
-        "description": "",
+        "path": "balance-sheet-statement-as-reported",
         "required_params": [
           "symbol"
         ],
@@ -1467,6 +1624,7 @@
           "limit",
           "period"
         ],
+        "description": "Access balance sheets as reported by the company with the As Reported Balance Statements API. View detailed financial data on assets, liabilities, and equity directly from official filings.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "FULL",
@@ -1476,7 +1634,6 @@
       },
       "cash_flow_statement_as_reported": {
         "path": "cash-flow-statement-as-reported",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1484,6 +1641,7 @@
           "limit",
           "period"
         ],
+        "description": "View cash flow statements as reported by the company with the As Reported Cash Flow Statements API. Analyze a company's cash flows related to operations, investments, and financing directly from official reports.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "FULL",
@@ -1493,7 +1651,6 @@
       },
       "financial_statement_full_as_reported": {
         "path": "financial-statement-full-as-reported",
-        "description": "",
         "required_params": [
           "symbol"
         ],
@@ -1501,8 +1658,41 @@
           "limit",
           "period"
         ],
+        "description": "Retrieve comprehensive financial statements as reported by companies with FMP Financial Raw Filings API. Access complete data across income, balance sheet, and cash flow statements in their original form for detailed analysis.",
         "access": {
           "FREE": "LIMITED",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "financial_reports_json": {
+        "path": "financial-reports-json",
+        "required_params": [
+          "symbol",
+          "year",
+          "period"
+        ],
+        "optional_params": [],
+        "description": "Access comprehensive annual reports with the FMP Annual Reports on Form 10-K API. Obtain detailed information about a company’s financial performance, business operations, and risk factors as reported to the SEC.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "financial_reports_xlsx": {
+        "path": "financial-reports-xlsx",
+        "required_params": [
+          "symbol",
+          "year",
+          "period"
+        ],
+        "optional_params": [],
+        "description": "Download detailed 10-K reports in XLSX format with the Financial Reports Form 10-K XLSX API. Effortlessly access and analyze annual financial data for companies in a spreadsheet-friendly format.",
+        "access": {
+          "FREE": "FULL",
           "STARTER": "FULL",
           "PREMIUM": "FULL",
           "ULTIMATE": "FULL"
@@ -1512,9 +1702,9 @@
     "Indexes": {
       "index_list": {
         "path": "index-list",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Retrieve a comprehensive list of stock market indexes across global exchanges using the FMP Stock Market Indexes List API. This API provides essential information such as the symbol, name, exchange, and currency for each index, helping analysts and investors keep track of various market benchmarks.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -1524,11 +1714,11 @@
       },
       "quote": {
         "path": "quote",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Access real-time stock index quotes with the Stock Index Quote API. Stay updated with the latest price changes, daily highs and lows, volume, and other key metrics for major stock indices around the world.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1538,11 +1728,11 @@
       },
       "quote_short": {
         "path": "quote-short",
-        "description": "",
         "required_params": [
           "symbol"
         ],
         "optional_params": [],
+        "description": "Access concise stock index quotes with the Stock Index Short Quote API. This API provides a snapshot of the current price, change, and volume for stock indexes, making it ideal for users who need a quick overview of market movements.",
         "access": {
           "FREE": "LIMITED",
           "STARTER": "LIMITED",
@@ -1552,11 +1742,11 @@
       },
       "batch_index_quotes": {
         "path": "batch-index-quotes",
-        "description": "",
         "required_params": [],
         "optional_params": [
           "short"
         ],
+        "description": "The All Index Quotes API provides real-time quotes for a wide range of stock indexes, from major market benchmarks to niche indexes. This API allows users to track market performance across multiple indexes in a single request, giving them a broad view of the financial markets.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1566,9 +1756,9 @@
       },
       "sp500_constituent": {
         "path": "sp500-constituent",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Access detailed data on the S&P 500 index using the S&P 500 Index API. Track the performance and key information of the companies that make up this major stock market index.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1578,9 +1768,9 @@
       },
       "nasdaq_constituent": {
         "path": "nasdaq-constituent",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Access comprehensive data for the Nasdaq index with the Nasdaq Index API. Monitor real-time movements and track the historical performance of companies listed on this prominent stock exchange.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1590,9 +1780,9 @@
       },
       "dowjones_constituent": {
         "path": "dowjones-constituent",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Access data on the Dow Jones Industrial Average using the Dow Jones API. Track current values, analyze trends, and get detailed information about the companies that make up this important stock index.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1602,9 +1792,9 @@
       },
       "historical_sp500_constituent": {
         "path": "historical-sp500-constituent",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Retrieve historical data for the S&P 500 index using the Historical S&P 500 API. Analyze past changes in the index, including additions and removals of companies, to understand trends and performance over time.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1614,9 +1804,9 @@
       },
       "historical_nasdaq_constituent": {
         "path": "historical-nasdaq-constituent",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Access historical data for the Nasdaq index using the Historical Nasdaq API. Analyze changes in the index composition and view how it has evolved over time, including company additions and removals.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
@@ -1626,12 +1816,103 @@
       },
       "historical_dowjones_constituent": {
         "path": "historical-dowjones-constituent",
-        "description": "",
         "required_params": [],
         "optional_params": [],
+        "description": "Access historical data for the Dow Jones Industrial Average using the Historical Dow Jones API. Analyze changes in the index’s composition and study its performance across different periods.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "light": {
+        "path": "historical-price-eod/light",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Retrieve end-of-day historical prices for stock indexes using the Historical Price Data API. This API provides essential data such as date, price, and volume, enabling detailed analysis of price movements over time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "full": {
+        "path": "historical-price-eod/full",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access full historical end-of-day prices for stock indexes using the Detailed Historical Price Data API. This API provides comprehensive information, including open, high, low, close prices, volume, and additional metrics for detailed financial analysis.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1min": {
+        "path": "historical-chart/1min",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Retrieve 1-minute interval intraday data for stock indexes using the Intraday 1-Minute Price Data API. This API provides granular price information, helping users track short-term price movements and trading volume within each minute.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_5min": {
+        "path": "historical-chart/5min",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Retrieve 5-minute interval intraday price data for stock indexes using the Intraday 5-Minute Price Data API. This API provides crucial insights into price movements and trading volume within 5-minute windows, ideal for traders who require short-term data.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1hr": {
+        "path": "historical-chart/1hour",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Access 1-hour interval intraday data for stock indexes using the Intraday 1-Hour Price Data API. This API provides detailed price movements and volume within hourly intervals, making it ideal for tracking medium-term market trends during the trading day.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
           "PREMIUM": "FULL",
           "ULTIMATE": "FULL"
         }
@@ -1640,14 +1921,242 @@
     "Bulk": {
       "company_profiles": {
         "path": "profile-bulk",
-        "description": "The FMP Profile Bulk API allows users to retrieve comprehensive company profile data in bulk.",
         "required_params": [
           "part"
         ],
         "optional_params": [],
+        "description": "The FMP Profile Bulk API allows users to retrieve comprehensive company profile data in bulk. Access essential information, such as company details, stock price, market cap, sector, industry, and more for multiple companies in a single request.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "NO_ACCESS",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "rating_bulk": {
+        "path": "rating-bulk",
+        "required_params": [],
+        "optional_params": [],
+        "description": "The FMP Rating Bulk API provides users with comprehensive rating data for multiple stocks in a single request. Retrieve key financial ratings and recommendations such as overall ratings, DCF recommendations, and more for multiple companies at once.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "dcf_bulk": {
+        "path": "dcf-bulk",
+        "required_params": [],
+        "optional_params": [],
+        "description": "The FMP DCF Bulk API enables users to quickly retrieve discounted cash flow (DCF) valuations for multiple symbols in one request. Access the implied price movement and percentage differences for all listed companies.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "scores_bulk": {
+        "path": "scores-bulk",
+        "required_params": [],
+        "optional_params": [],
+        "description": "The FMP Scores Bulk API allows users to quickly retrieve a wide range of key financial scores and metrics for multiple symbols. These scores provide valuable insights into company performance, financial health, and operational efficiency.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "price_target_summary_bulk": {
+        "path": "price-target-summary-bulk",
+        "required_params": [],
+        "optional_params": [],
+        "description": "The Price Target Summary Bulk API provides a comprehensive overview of price targets for all listed symbols over multiple timeframes. With this API, users can quickly retrieve price target data, helping investors and analysts compare current prices to projected targets across different periods.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "etf_holder_bulk": {
+        "path": "etf-holder-bulk",
+        "required_params": [
+          "part"
+        ],
+        "optional_params": [],
+        "description": "The ETF Holder Bulk API allows users to quickly retrieve detailed information about the assets and shares held by Exchange-Traded Funds (ETFs). This API provides insights into the weight each asset carries within the ETF, along with key financial information related to these holdings.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "upgrades_downgrades_consensus_bulk": {
+        "path": "upgrades-downgrades-consensus-bulk",
+        "required_params": [],
+        "optional_params": [],
+        "description": "The Upgrades Downgrades Consensus Bulk API provides a comprehensive view of analyst ratings across all symbols. Retrieve bulk data for analyst upgrades, downgrades, and consensus recommendations to gain insights into the market's outlook on individual stocks.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "key_metrics_ttm_bulk": {
+        "path": "key-metrics-ttm-bulk",
+        "required_params": [],
+        "optional_params": [],
+        "description": "The Key Metrics TTM Bulk API allows users to retrieve trailing twelve months (TTM) data for all companies available in the database. The API provides critical financial ratios and metrics based on each company’s latest financial report, offering insights into company performance and financial health.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "ratios_ttm_bulk": {
+        "path": "ratios-ttm-bulk",
+        "required_params": [],
+        "optional_params": [],
+        "description": "The Ratios TTM Bulk API offers an efficient way to retrieve trailing twelve months (TTM) financial ratios for stocks. It provides users with detailed insights into a company’s profitability, liquidity, efficiency, leverage, and valuation ratios, all based on the most recent financial report.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "peers_bulk": {
+        "path": "peers-bulk",
+        "required_params": [],
+        "optional_params": [],
+        "description": "The Stock Peers Bulk API allows you to quickly retrieve a comprehensive list of peer companies for all stocks in the database. By accessing this data, you can easily compare a stock’s performance with its closest competitors or similar companies within the same industry or sector.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "earnings_surprises_bulk": {
+        "path": "earnings-surprises-bulk",
+        "required_params": [
+          "year"
+        ],
+        "optional_params": [],
+        "description": "The Earnings Surprises Bulk API allows users to retrieve bulk data on annual earnings surprises, enabling quick analysis of which companies have beaten, missed, or met their earnings estimates. This API provides actual versus estimated earnings per share (EPS) for multiple companies at once, offering valuable insights for investors and analysts.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "income_statement_bulk": {
+        "path": "income-statement-bulk",
+        "required_params": [
+          "year",
+          "period"
+        ],
+        "optional_params": [],
+        "description": "The Bulk Income Statement API allows users to retrieve detailed income statement data in bulk. This API is designed for large-scale data analysis, providing comprehensive insights into a company's financial performance, including revenue, gross profit, expenses, and net income.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "income_statement_growth_bulk": {
+        "path": "income-statement-growth-bulk",
+        "required_params": [
+          "year",
+          "period"
+        ],
+        "optional_params": [],
+        "description": "The Bulk Income Statement Growth API provides access to growth data for income statements across multiple companies. Track and analyze growth trends over time for key financial metrics such as revenue, net income, and operating income, enabling a better understanding of corporate performance trends.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "balance_sheet_statement_bulk": {
+        "path": "balance-sheet-statement-bulk",
+        "required_params": [
+          "year",
+          "period"
+        ],
+        "optional_params": [],
+        "description": "The Bulk Balance Sheet Statement API provides comprehensive access to balance sheet data across multiple companies. It enables users to analyze financial positions by retrieving key figures such as total assets, liabilities, and equity. Ideal for comparing the financial health and stability of different companies on a large scale.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "balance_sheet_statement_growth_bulk": {
+        "path": "balance-sheet-statement-growth-bulk",
+        "required_params": [
+          "year",
+          "period"
+        ],
+        "optional_params": [],
+        "description": "The Balance Sheet Growth Bulk API allows users to retrieve growth data across multiple companies’ balance sheets, enabling detailed analysis of how financial positions have changed over time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "cash_flow_statement_bulk": {
+        "path": "cash-flow-statement-bulk",
+        "required_params": [
+          "year",
+          "period"
+        ],
+        "optional_params": [],
+        "description": "The Cash Flow Statement Bulk API provides access to detailed cash flow reports for a wide range of companies. This API enables users to retrieve bulk cash flow statement data, helping to analyze companies’ operating, investing, and financing activities over time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "cash_flow_statement_growth_bulk": {
+        "path": "cash-flow-statement-growth-bulk",
+        "required_params": [
+          "year",
+          "period"
+        ],
+        "optional_params": [],
+        "description": "The Cash Flow Statement Growth Bulk API allows you to retrieve bulk growth data for cash flow statements, enabling you to track changes in cash flows over time. This API is ideal for analyzing the cash flow growth trends of multiple companies simultaneously.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "eod_bulk": {
+        "path": "eod-bulk",
+        "required_params": [
+          "date"
+        ],
+        "optional_params": [],
+        "description": "The EOD Bulk API allows users to retrieve end-of-day stock price data for multiple symbols in bulk. This API is ideal for financial analysts, traders, and investors who need to assess valuations for a large number of companies.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
           "PREMIUM": "FULL",
           "ULTIMATE": "FULL"
         }
@@ -1656,7 +2165,6 @@
     "Technical_Indicators": {
       "simple_moving_average": {
         "path": "technical-indicators/sma",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1666,6 +2174,7 @@
           "from",
           "to"
         ],
+        "description": "Arithmetic mean of an asset's closing prices over a fixed look-back window, smoothing short-term noise to expose the underlying trend.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1675,7 +2184,6 @@
       },
       "exponential_moving_average": {
         "path": "technical-indicators/ema",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1685,6 +2193,7 @@
           "from",
           "to"
         ],
+        "description": "Moving average that applies exponentially decaying weights to past prices, making the line more responsive to recent moves than a simple SMA.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1694,7 +2203,6 @@
       },
       "weighted_moving_average": {
         "path": "technical-indicators/wma",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1704,6 +2212,7 @@
           "from",
           "to"
         ],
+        "description": "Moving average that assigns linearly decreasing weights to older prices, balancing the responsiveness of an EMA with a deterministic decay.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1713,7 +2222,6 @@
       },
       "double_exponential_moving_average": {
         "path": "technical-indicators/dema",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1723,6 +2231,7 @@
           "from",
           "to"
         ],
+        "description": "A faster, lag-reduced moving average defined as 2·EMA − EMA(EMA), designed to track price more closely than a standard EMA.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1732,7 +2241,6 @@
       },
       "triple_exponential_moving_average": {
         "path": "technical-indicators/tema",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1742,6 +2250,7 @@
           "from",
           "to"
         ],
+        "description": "A further lag-reduced moving average defined as 3·EMA − 3·EMA(EMA) + EMA(EMA(EMA)), tighter to price than both EMA and DEMA.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1751,7 +2260,6 @@
       },
       "relative_strength_index": {
         "path": "technical-indicators/rsi",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1761,6 +2269,7 @@
           "from",
           "to"
         ],
+        "description": "Momentum oscillator bounded between 0 and 100 that measures the speed and magnitude of recent price changes to flag overbought and oversold conditions.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1770,7 +2279,6 @@
       },
       "standard_deviation": {
         "path": "technical-indicators/standarddeviation",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1780,6 +2288,7 @@
           "from",
           "to"
         ],
+        "description": "Rolling measure of price dispersion around its mean over a fixed window, used as a fundamental gauge of volatility for the requested asset and timeframe.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1789,7 +2298,6 @@
       },
       "williams": {
         "path": "technical-indicators/williams",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1799,6 +2307,7 @@
           "from",
           "to"
         ],
+        "description": "Momentum oscillator bounded between -100 and 0 that locates the current close relative to the highest high and lowest low of the look-back window.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1808,7 +2317,6 @@
       },
       "average_directional_index": {
         "path": "technical-indicators/adx",
-        "description": "",
         "required_params": [
           "symbol",
           "periodLength",
@@ -1818,6 +2326,7 @@
           "from",
           "to"
         ],
+        "description": "Indicator measuring trend strength on a 0–100 scale, derived from smoothed directional movement and used to separate trending markets from ranging ones.",
         "access": {
           "FREE": "NO_ACCESS",
           "STARTER": "LIMITED",
@@ -1829,13 +2338,13 @@
     "Market_Hours": {
       "exchange_market_hours": {
         "path": "exchange-market-hours",
-        "description": "Retrieve trading hours for specific stock exchanges using the Global Exchange Market Hours API. Find out the opening and closing times of global exchanges to plan your trading strategies effectively.",
         "required_params": [
           "exchange"
         ],
         "optional_params": [
           "timestamp"
         ],
+        "description": "Retrieve trading hours for specific stock exchanges using the Global Exchange Market Hours API. Find out the opening and closing times of global exchanges to plan your trading strategies effectively.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -1845,7 +2354,6 @@
       },
       "market_holidays": {
         "path": "holidays-by-exchange",
-        "description": "Retrieve a list of market holidays and non-trading days for a specific stock exchange using the Holidays By Exchange API. Plan your trading schedule by knowing exactly when exchanges like NASDAQ, NYSE, and others are closed.",
         "required_params": [
           "exchange"
         ],
@@ -1853,6 +2361,7 @@
           "from",
           "to"
         ],
+        "description": "Retrieve a list of market holidays and non-trading days for a specific stock exchange using the Holidays By Exchange API. Plan your trading schedule by knowing exactly when exchanges like NASDAQ, NYSE, and others are closed.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",
@@ -1862,11 +2371,1801 @@
       },
       "all_exchanges_market_hours": {
         "path": "all-exchange-market-hours",
-        "description": "View the market hours for all exchanges. Check when different markets are active.",
         "required_params": [],
         "optional_params": [
           "timestamp"
         ],
+        "description": "View the market hours for all exchanges. Check when different markets are active.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Quote": {
+      "quote": {
+        "path": "quote",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Access real-time stock quotes with the FMP Stock Quote API. Get up-to-the-minute prices, changes, and volume data for individual stocks.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote_short": {
+        "path": "quote-short",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Get quick snapshots of real-time stock quotes with the FMP Stock Quote Short API. Access key stock data like current price, volume, and price changes for instant market insights.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "aftermarket_trade": {
+        "path": "aftermarket-trade",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Track real-time trading activity occurring after regular market hours with the FMP Aftermarket Trade API. Access key details such as trade prices, sizes, and timestamps for trades executed during the post-market session.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "aftermarket_quote": {
+        "path": "aftermarket-quote",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Access real-time aftermarket stock quotes with the FMP Aftermarket Quote API. Track bid and ask prices, volume, and other relevant data outside of regular trading hours.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "stock_price_change": {
+        "path": "stock-price-change",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Track stock price fluctuations in real-time with the FMP Stock Price Change API. Monitor percentage and value changes over various time periods, including daily, weekly, monthly, and long-term.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_quote": {
+        "path": "batch-quote",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [],
+        "description": "Retrieve multiple real-time stock quotes in a single request with the FMP Stock Batch Quote API. Access current prices, volume, and detailed data for multiple companies at once, making it easier to track large portfolios or monitor multiple stocks simultaneously.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_quote_short": {
+        "path": "batch-quote-short",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [],
+        "description": "Access real-time, short-form quotes for multiple stocks with the FMP Stock Batch Quote Short API. Get a quick snapshot of key stock data such as current price, change, and volume for several companies in one streamlined request.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_aftermarket_trade": {
+        "path": "batch-aftermarket-trade",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [],
+        "description": "Retrieve real-time aftermarket trading data for multiple stocks with the FMP Batch Aftermarket Trade API. Track post-market trade prices, volumes, and timestamps across several companies simultaneously.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_aftermarket_quote": {
+        "path": "batch-aftermarket-quote",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [],
+        "description": "Retrieve real-time aftermarket quotes for multiple stocks with the FMP Batch Aftermarket Quote API. Access bid and ask prices, volume, and other relevant data for several companies during post-market trading.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_exchange_quote": {
+        "path": "batch-exchange-quote",
+        "required_params": [
+          "exchange"
+        ],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Retrieve real-time stock quotes for all listed stocks on a specific exchange with the FMP Exchange Stock Quotes API. Track price changes and trading activity across the entire exchange.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_mutualfund_quotes": {
+        "path": "batch-mutualfund-quotes",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Access real-time quotes for mutual funds with the FMP Mutual Fund Price Quotes API. Track current prices, performance changes, and key data for various mutual funds.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_etf_quotes": {
+        "path": "batch-etf-quotes",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Get real-time price quotes for exchange-traded funds (ETFs) with the FMP ETF Price Quotes API. Track current prices, performance changes, and key data for a wide variety of ETFs.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_commodity_quotes": {
+        "path": "batch-commodity-quotes",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Get up-to-the-minute quotes for commodities with the FMP Commodities Quotes API. Track the latest prices, changes, and volumes for a wide range of commodities, including oil, gold, and agricultural products.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_crypto_quotes": {
+        "path": "batch-crypto-quotes",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Access real-time cryptocurrency quotes with the FMP Full Cryptocurrency Quotes API. Track live prices, trading volumes, and price changes for a wide range of digital assets.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_forex_quotes": {
+        "path": "batch-forex-quotes",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Retrieve real-time quotes for multiple forex currency pairs with the FMP Batch Forex Quote API. Get real-time price changes and updates for a variety of forex pairs in a single request.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_index_quotes": {
+        "path": "batch-index-quotes",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Track real-time movements of major stock market indexes with the FMP Stock Market Index Quotes API. Access live quotes for global indexes and monitor changes in their performance.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "News": {
+      "fmp_articles": {
+        "path": "fmp-articles",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Access the latest articles from FMP with the FMP Articles API. Get comprehensive updates including headlines, snippets, and publication URLs.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_general_latest": {
+        "path": "news/general-latest",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Access the latest general news articles from a variety of sources with the FMP General News API. Obtain headlines, snippets, and publication URLs for comprehensive news coverage.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_press_releases_latest": {
+        "path": "news/press-releases-latest",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Access official company press releases with the FMP Press Releases API. Get real-time updates on corporate announcements, earnings reports, mergers, and more.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_stock_latest": {
+        "path": "news/stock-latest",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Stay informed with the latest stock market news using the FMP Stock News Feed API. Access headlines, snippets, publication URLs, and ticker symbols for the most recent articles from a variety of sources.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_crypto_latest": {
+        "path": "news/crypto-latest",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Stay informed with the latest cryptocurrency news using the FMP Crypto News API. Access a curated list of articles from various sources, including headlines, snippets, and publication URLs.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_forex_latest": {
+        "path": "news/forex-latest",
+        "required_params": [],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Stay updated with the latest forex news articles from various sources using the FMP Forex News API. Access headlines, snippets, and publication URLs for comprehensive market insights.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_press_releases": {
+        "path": "news/press-releases",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Search for company press releases with the FMP Search Press Releases API. Find specific corporate announcements and updates by entering a stock symbol or company name.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_stock": {
+        "path": "news/stock",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Search for stock-related news using the FMP Search Stock News API. Find specific stock news by entering a ticker symbol or company name to track the latest developments.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_crypto": {
+        "path": "news/crypto",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Search for cryptocurrency news using the FMP Search Crypto News API. Retrieve news related to specific coins or tokens by entering their name or symbol.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "news_forex": {
+        "path": "news/forex",
+        "required_params": [
+          "symbols"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "page",
+          "limit"
+        ],
+        "description": "Search for foreign exchange news using the FMP Search Forex News API. Find targeted news on specific currency pairs by entering their symbols for focused updates.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Form_13F": {
+      "institutional_ownership_latest": {
+        "path": "institutional-ownership/latest",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Stay up to date with the most recent SEC filings related to institutional ownership using the Institutional Ownership Filings API. This tool allows you to track the latest reports and disclosures from institutional investors, giving you a real-time view of major holdings and regulatory submissions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "institutional_ownership_extract": {
+        "path": "institutional-ownership/extract",
+        "required_params": [
+          "cik",
+          "year",
+          "quarter"
+        ],
+        "optional_params": [],
+        "description": "The SEC Filings Extract API allows users to extract detailed data directly from official SEC filings. This API provides access to key information such as company shares, security details, and filing links, making it easier to analyze corporate disclosures.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "institutional_ownership_dates": {
+        "path": "institutional-ownership/dates",
+        "required_params": [
+          "cik"
+        ],
+        "optional_params": [],
+        "description": "The Form 13F Filings Dates API allows you to retrieve dates associated with Form 13F filings by institutional investors. This is crucial for tracking stock holdings of institutional investors at specific points in time, providing valuable insights into their investment strategies.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "institutional_ownership_extract_analytics_holder": {
+        "path": "institutional-ownership/extract-analytics/holder",
+        "required_params": [
+          "symbol",
+          "year",
+          "quarter"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "The Filings Extract With Analytics By Holder API provides an analytical breakdown of institutional filings. This API offers insight into stock movements, strategies, and portfolio changes by major institutional holders, helping you understand their investment behavior and track significant changes in stock ownership.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "institutional_ownership_holder_performance_summary": {
+        "path": "institutional-ownership/holder-performance-summary",
+        "required_params": [
+          "cik"
+        ],
+        "optional_params": [
+          "page"
+        ],
+        "description": "The Holder Performance Summary API provides insights into the performance of institutional investors based on their stock holdings. This data helps track how well institutional holders are performing, their portfolio changes, and how their performance compares to benchmarks like the S&P 500.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "institutional_ownership_holder_industry_breakdown": {
+        "path": "institutional-ownership/holder-industry-breakdown",
+        "required_params": [
+          "cik",
+          "year",
+          "quarter"
+        ],
+        "optional_params": [],
+        "description": "The Holders Industry Breakdown API provides an overview of the sectors and industries that institutional holders are investing in. This API helps analyze how institutional investors distribute their holdings across different industries and track changes in their investment strategies over time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "institutional_ownership_symbol_positions_summary": {
+        "path": "institutional-ownership/symbol-positions-summary",
+        "required_params": [
+          "symbol",
+          "year",
+          "quarter"
+        ],
+        "optional_params": [],
+        "description": "The Positions Summary API provides a comprehensive snapshot of institutional holdings for a specific stock symbol. It tracks key metrics like the number of investors holding the stock, changes in the number of shares, total investment value, and ownership percentages over time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "institutional_ownership_industry_summary": {
+        "path": "institutional-ownership/industry-summary",
+        "required_params": [
+          "year",
+          "quarter"
+        ],
+        "optional_params": [],
+        "description": "The Industry Performance Summary API provides an overview of how various industries are performing financially. By analyzing the value of industries over a specific period, this API helps investors and analysts understand the health of entire sectors and make informed decisions about sector-based investments.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Analyst": {
+      "analyst_estimates": {
+        "path": "analyst-estimates",
+        "required_params": [
+          "symbol",
+          "period"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Retrieve analyst financial estimates for stock symbols with the FMP Financial Estimates API. Access projected figures like revenue, earnings per share (EPS), and other key financial metrics as forecasted by industry analysts to inform your investment decisions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "ratings_snapshot": {
+        "path": "ratings-snapshot",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Quickly assess the financial health and performance of companies with the FMP Ratings Snapshot API. This API provides a comprehensive snapshot of financial ratings for stock symbols in our database, based on various key financial ratios.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "ratings_historical": {
+        "path": "ratings-historical",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "description": "Track changes in financial performance over time with the FMP Historical Ratings API. This API provides access to historical financial ratings for stock symbols in our database, allowing users to view ratings and key financial metric scores for specific dates.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "price_target_summary": {
+        "path": "price-target-summary",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Gain insights into analysts' expectations for stock prices with the FMP Price Target Summary API. This API provides access to average price targets from analysts across various timeframes, helping investors assess future stock performance based on expert opinions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "price_target_consensus": {
+        "path": "price-target-consensus",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Access analysts' consensus price targets with the FMP Price Target Consensus API. This API provides high, low, median, and consensus price targets for stocks, offering investors a comprehensive view of market expectations for future stock prices.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "grades": {
+        "path": "grades",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Access the latest stock grades from top analysts and financial institutions with the FMP Grades API. Track grading actions, such as upgrades, downgrades, or maintained ratings, for specific stock symbols, providing valuable insight into how experts evaluate companies over time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "grades_historical": {
+        "path": "grades-historical",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "description": "Access a comprehensive record of analyst grades with the FMP Historical Grades API. This tool allows you to track historical changes in analyst ratings for specific stock symbol",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "grades_consensus": {
+        "path": "grades-consensus",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Quickly access an overall view of analyst ratings with the FMP Grades Summary API. This API provides a consolidated summary of market sentiment for individual stock symbols, including the total number of strong buy, buy, hold, sell, and strong sell ratings. Understand the overall consensus on a stock’s outlook with just a few data points.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Market_Performance": {
+      "sector_performance_snapshot": {
+        "path": "sector-performance-snapshot",
+        "required_params": [
+          "date"
+        ],
+        "optional_params": [
+          "exchange",
+          "sector"
+        ],
+        "description": "Get a snapshot of sector performance using the Market Sector Performance Snapshot API. Analyze how different industries are performing in the market based on average changes across sectors.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "industry_performance_snapshot": {
+        "path": "industry-performance-snapshot",
+        "required_params": [
+          "date"
+        ],
+        "optional_params": [
+          "exchange",
+          "industry"
+        ],
+        "description": "Access detailed performance data by industry using the Industry Performance Snapshot API. Analyze trends, movements, and daily performance metrics for specific industries across various stock exchanges.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_sector_performance": {
+        "path": "historical-sector-performance",
+        "required_params": [
+          "sector"
+        ],
+        "optional_params": [
+          "from",
+          "exchange",
+          "to"
+        ],
+        "description": "Access historical sector performance data using the Historical Market Sector Performance API. Review how different sectors have performed over time across various stock exchanges.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_industry_performance": {
+        "path": "historical-industry-performance",
+        "required_params": [
+          "industry"
+        ],
+        "optional_params": [
+          "exchange",
+          "from",
+          "to"
+        ],
+        "description": "Access historical performance data for industries using the Historical Industry Performance API. Track long-term trends and analyze how different industries have evolved over time across various stock exchanges.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sector_pe_snapshot": {
+        "path": "sector-pe-snapshot",
+        "required_params": [
+          "date"
+        ],
+        "optional_params": [
+          "exchange",
+          "sector"
+        ],
+        "description": "Retrieve the price-to-earnings (P/E) ratios for various sectors using the Sector P/E Snapshot API. Compare valuation levels across sectors to better understand market valuations.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "industry_pe_snapshot": {
+        "path": "industry-pe-snapshot",
+        "required_params": [
+          "date"
+        ],
+        "optional_params": [
+          "exchange",
+          "industry"
+        ],
+        "description": "View price-to-earnings (P/E) ratios for different industries using the Industry P/E Snapshot API. Analyze valuation levels across various industries to understand how each is priced relative to its earnings.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_sector_pe": {
+        "path": "historical-sector-pe",
+        "required_params": [
+          "sector"
+        ],
+        "optional_params": [
+          "from",
+          "exchange",
+          "to"
+        ],
+        "description": "Access historical price-to-earnings (P/E) ratios for various sectors using the Historical Sector P/E API. Analyze how sector valuations have evolved over time to understand long-term trends and market shifts.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "historical_industry_pe": {
+        "path": "historical-industry-pe",
+        "required_params": [
+          "industry"
+        ],
+        "optional_params": [
+          "exchange",
+          "from",
+          "to"
+        ],
+        "description": "Access historical price-to-earnings (P/E) ratios by industry using the Historical Industry P/E API. Track valuation trends across various industries to understand how market sentiment and valuations have evolved over time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "biggest_gainers": {
+        "path": "biggest-gainers",
+        "required_params": [],
+        "optional_params": [],
+        "description": "Track the stocks with the largest price increases using the Top Stock Gainers API. Identify the companies that are leading the market with significant price surges, offering potential growth opportunities.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "biggest_losers": {
+        "path": "biggest-losers",
+        "required_params": [],
+        "optional_params": [],
+        "description": "Access data on the stocks with the largest price drops using the Biggest Stock Losers API. Identify companies experiencing significant declines and track the stocks that are falling the fastest in the market.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "most_actives": {
+        "path": "most-actives",
+        "required_params": [],
+        "optional_params": [],
+        "description": "View the most actively traded stocks using the Top Traded Stocks API. Identify the companies experiencing the highest trading volumes in the market and track where the most trading activity is happening.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Sec_Filings": {
+      "sec_filings_8k": {
+        "path": "sec-filings-8k",
+        "required_params": [
+          "from",
+          "to"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Stay up-to-date with the most recent 8-K filings from publicly traded companies using the FMP Latest 8-K SEC Filings API. Get real-time access to significant company events such as mergers, acquisitions, leadership changes, and other material events that may impact the market.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sec_filings_financials": {
+        "path": "sec-filings-financials",
+        "required_params": [
+          "from",
+          "to"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Stay updated with the most recent SEC filings from publicly traded companies using the FMP Latest SEC Filings API. Access essential regulatory documents, including financial statements, annual reports, 8-K, 10-K, and 10-Q forms.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sec_filings_search_form_type": {
+        "path": "sec-filings-search/form-type",
+        "required_params": [
+          "formType",
+          "from",
+          "to"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Search for specific SEC filings by form type with the FMP SEC Filings By Form Type API. Retrieve filings such as 10-K, 10-Q, 8-K, and others, filtered by the exact type of document you're looking for.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sec_filings_search_symbol": {
+        "path": "sec-filings-search/symbol",
+        "required_params": [
+          "symbol",
+          "from",
+          "to"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Search and retrieve SEC filings by company symbol using the FMP SEC Filings By Symbol API. Gain direct access to regulatory filings such as 8-K, 10-K, and 10-Q reports for publicly traded companies.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sec_filings_search_cik": {
+        "path": "sec-filings-search/cik",
+        "required_params": [
+          "cik",
+          "from",
+          "to"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Search for SEC filings using the FMP SEC Filings By CIK API. Access detailed regulatory filings by Central Index Key (CIK) number, enabling you to track all filings related to a specific company or entity.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sec_filings_company_search_name": {
+        "path": "sec-filings-company-search/name",
+        "required_params": [
+          "company"
+        ],
+        "optional_params": [],
+        "description": "Search for SEC filings by company or entity name using the FMP SEC Filings By Name API. Quickly retrieve official filings for any organization based on its name.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sec_filings_company_search_symbol": {
+        "path": "sec-filings-company-search/symbol",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Find company information and regulatory filings using a stock symbol with the FMP SEC Filings Company Search By Symbol API. Quickly access essential company details based on stock ticker symbols.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sec_filings_company_search_cik": {
+        "path": "sec-filings-company-search/cik",
+        "required_params": [
+          "cik"
+        ],
+        "optional_params": [],
+        "description": "Easily find company information using a CIK (Central Index Key) with the FMP SEC Filings Company Search By CIK API. Access essential company details and filings linked to a specific CIK number.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "sec_profile": {
+        "path": "sec-profile",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "cik"
+        ],
+        "description": "Retrieve detailed company profiles, including business descriptions, executive details, contact information, and financial data with the FMP SEC Company Full Profile API.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "standard_industrial_classification_list": {
+        "path": "standard-industrial-classification-list",
+        "required_params": [],
+        "optional_params": [
+          "industryTitle",
+          "sicCode"
+        ],
+        "description": "Retrieve a comprehensive list of industry classifications, including Standard Industrial Classification (SIC) codes and industry titles with the FMP Industry Classification List API.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "industry_classification_search": {
+        "path": "industry-classification-search",
+        "required_params": [],
+        "optional_params": [
+          "symbol",
+          "cik",
+          "sicCode"
+        ],
+        "description": "Search and retrieve industry classification details for companies, including SIC codes, industry titles, and business information, with the FMP Industry Classification Search API.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "all_industry_classification": {
+        "path": "all-industry-classification",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Access comprehensive industry classification data for companies across all sectors with the FMP All Industry Classification API. Retrieve key details such as SIC codes, industry titles, and business contact information.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Insider_Trades": {
+      "insider_trading_latest": {
+        "path": "insider-trading/latest",
+        "required_params": [],
+        "optional_params": [
+          "date",
+          "page",
+          "limit"
+        ],
+        "description": "Access the latest insider trading activity using the Latest Insider Trading API. Track which company insiders are buying or selling stocks and analyze their transactions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "insider_trading_search": {
+        "path": "insider-trading/search",
+        "required_params": [],
+        "optional_params": [
+          "symbol",
+          "page",
+          "limit",
+          "reportingCik",
+          "companyCik",
+          "transactionType"
+        ],
+        "description": "Search insider trading activity by company or symbol using the Search Insider Trades API. Find specific trades made by corporate insiders, including executives and directors.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "insider_trading_reporting_name": {
+        "path": "insider-trading/reporting-name",
+        "required_params": [
+          "name"
+        ],
+        "optional_params": [],
+        "description": "Search for insider trading activity by reporting name using the Search Insider Trades by Reporting Name API. Track trading activities of specific individuals or groups involved in corporate insider transactions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "insider_trading_transaction_type": {
+        "path": "insider-trading-transaction-type",
+        "required_params": [],
+        "optional_params": [],
+        "description": "Access a comprehensive list of insider transaction types with the All Insider Transaction Types API. This API provides details on various transaction actions, including purchases, sales, and other corporate actions involving insider trading.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "insider_trading_statistics": {
+        "path": "insider-trading/statistics",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Analyze insider trading activity with the Insider Trade Statistics API. This API provides key statistics on insider transactions, including total purchases, sales, and trends for specific companies or stock symbols.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "acquisition_of_beneficial_ownership": {
+        "path": "acquisition-of-beneficial-ownership",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "limit"
+        ],
+        "description": "Track changes in stock ownership during acquisitions using the Acquisition Ownership API. This API provides detailed information on how mergers, takeovers, or beneficial ownership changes impact the stock ownership structure of a company.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Discounted_Cash_Flow": {
+      "discounted_cash_flow": {
+        "path": "discounted-cash-flow",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Estimate the intrinsic value of a company with the FMP Discounted Cash Flow Valuation API. Calculate the DCF valuation based on expected future cash flows and discount rates.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "levered_discounted_cash_flow": {
+        "path": "levered-discounted-cash-flow",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Analyze a company’s value with the FMP Levered Discounted Cash Flow (DCF) API, which incorporates the impact of debt. This API provides post-debt company valuation, offering investors a more accurate measure of a company's true worth by accounting for its debt obligations.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "custom_discounted_cash_flow": {
+        "path": "custom-discounted-cash-flow",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "revenueGrowthPct",
+          "ebitdaPct",
+          "depreciationAndAmortizationPct",
+          "cashAndShortTermInvestmentsPct",
+          "receivablesPct",
+          "inventoriesPct",
+          "payablePct",
+          "ebitPct",
+          "capitalExpenditurePct",
+          "operatingCashFlowPct",
+          "sellingGeneralAndAdministrativeExpensesPct",
+          "taxRate",
+          "longTermGrowthRate",
+          "costOfDebt",
+          "costOfEquity",
+          "marketRiskPremium",
+          "beta",
+          "riskFreeRate"
+        ],
+        "description": "Run a tailored Discounted Cash Flow (DCF) analysis using the FMP Custom DCF Advanced API. With detailed inputs, this API allows users to fine-tune their assumptions and variables, offering a more personalized and precise valuation for a company.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "custom_levered_discounted_cash_flow": {
+        "path": "custom-levered-discounted-cash-flow",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "revenueGrowthPct",
+          "ebitdaPct",
+          "depreciationAndAmortizationPct",
+          "cashAndShortTermInvestmentsPct",
+          "receivablesPct",
+          "inventoriesPct",
+          "payablePct",
+          "ebitPct",
+          "capitalExpenditurePct",
+          "operatingCashFlowPct",
+          "sellingGeneralAndAdministrativeExpensesPct",
+          "taxRate",
+          "longTermGrowthRate",
+          "costOfDebt",
+          "costOfEquity",
+          "marketRiskPremium",
+          "beta",
+          "riskFreeRate"
+        ],
+        "description": "Run a tailored Discounted Cash Flow (DCF) analysis using the FMP Custom DCF Advanced API. With detailed inputs, this API allows users to fine-tune their assumptions and variables, offering a more personalized and precise valuation for a company.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Forex": {
+      "forex_list": {
+        "path": "forex-list",
+        "required_params": [],
+        "optional_params": [],
+        "description": "Access a comprehensive list of all currency pairs traded on the forex market with the FMP Forex Currency Pairs API. Analyze and track the performance of currency pairs to make informed investment decisions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote": {
+        "path": "quote",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Access real-time forex quotes for currency pairs with the Forex Quote API. Retrieve up-to-date information on exchange rates and price changes to help monitor market movements.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote_short": {
+        "path": "quote-short",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Quickly access concise forex pair quotes with the Forex Quote Snapshot API. Get a fast look at live currency exchange rates, price changes, and volume in real time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_forex_quotes": {
+        "path": "batch-forex-quotes",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Easily access real-time quotes for multiple forex pairs simultaneously with the Batch Forex Quotes API. Stay updated on global currency exchange rates and monitor price changes across different markets.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "light": {
+        "path": "historical-price-eod/light",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access historical end-of-day forex prices with the Historical Forex Light Chart API. Track long-term price trends across different currency pairs to enhance your trading and analysis strategies.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "full": {
+        "path": "historical-price-eod/full",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access comprehensive historical end-of-day forex price data with the Full Historical Forex Chart API. Gain detailed insights into currency pair movements, including open, high, low, close (OHLC) prices, volume, and percentage changes.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1min": {
+        "path": "historical-chart/1min",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Access real-time 1-minute intraday forex data with the 1-Minute Forex Interval Chart API. Track short-term price movements for precise, up-to-the-minute insights on currency pair fluctuations.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_5min": {
+        "path": "historical-chart/5min",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Track short-term forex trends with the 5-Minute Forex Interval Chart API. Access detailed 5-minute intraday data to monitor currency pair price movements and market conditions in near real-time.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1hr": {
+        "path": "historical-chart/1hour",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Track forex price movements over the trading day with the 1-Hour Forex Interval Chart API. This tool provides hourly intraday data for currency pairs, giving a detailed view of trends and market shifts.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Crypto": {
+      "cryptocurrency_list": {
+        "path": "cryptocurrency-list",
+        "required_params": [],
+        "optional_params": [],
+        "description": "Access a comprehensive list of all cryptocurrencies traded on exchanges worldwide with the FMP Cryptocurrencies Overview API. Get detailed information on each cryptocurrency to inform your investment strategies.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote": {
+        "path": "quote",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Access real-time quotes for all cryptocurrencies with the FMP Full Cryptocurrency Quote API. Obtain comprehensive price data including current, high, low, and open prices.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "quote_short": {
+        "path": "quote-short",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Access real-time cryptocurrency quotes with the FMP Cryptocurrency Quick Quote API. Get a concise overview of current crypto prices, changes, and trading volume for a wide range of digital assets.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "batch_crypto_quotes": {
+        "path": "batch-crypto-quotes",
+        "required_params": [],
+        "optional_params": [
+          "short"
+        ],
+        "description": "Access live price data for a wide range of cryptocurrencies with the FMP Real-Time Cryptocurrency Batch Quotes API. Get real-time updates on prices, market changes, and trading volumes for digital assets in a single request.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "light": {
+        "path": "historical-price-eod/light",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access historical end-of-day prices for a variety of cryptocurrencies with the Historical Cryptocurrency Price Snapshot API. Track trends in price and trading volume over time to better understand market behavior.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "full": {
+        "path": "historical-price-eod/full",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to"
+        ],
+        "description": "Access comprehensive end-of-day (EOD) price data for cryptocurrencies with the Full Historical Cryptocurrency Data API. Analyze long-term price trends, market movements, and trading volumes to inform strategic decisions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1min": {
+        "path": "historical-chart/1min",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Get real-time, 1-minute interval price data for cryptocurrencies with the 1-Minute Cryptocurrency Intraday Data API. Monitor short-term price fluctuations and trading volume to stay updated on market movements.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_5min": {
+        "path": "historical-chart/5min",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Analyze short-term price trends with the 5-Minute Interval Cryptocurrency Data API. Access real-time, intraday price data for cryptocurrencies to monitor rapid market movements and optimize trading strategies.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "intraday_1hr": {
+        "path": "historical-chart/1hour",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "from",
+          "to",
+          "nonadjusted",
+          "extended"
+        ],
+        "description": "Access detailed 1-hour intraday price data for cryptocurrencies with the 1-Hour Interval Cryptocurrency Data API. Track hourly price movements to gain insights into market trends and make informed trading decisions throughout the day.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Senate": {
+      "senate_latest": {
+        "path": "senate-latest",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Access the latest financial disclosures from U.S. Senate members with the FMP Latest Senate Financial Disclosures API. Track recent trades, asset ownership, and transaction details for enhanced transparency in government financial activities.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "house_latest": {
+        "path": "house-latest",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Access real-time financial disclosures from U.S. House members with the FMP Latest House Financial Disclosures API. Track recent trades, asset ownership, and financial holdings for enhanced visibility into political figures' financial activities.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "senate_trades": {
+        "path": "senate-trades",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Monitor the trading activity of US Senators with the FMP Senate Trading Activity API. Access detailed information on trades made by Senators, including trade dates, assets, amounts, and potential conflicts of interest.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "senate_trades_by_name": {
+        "path": "senate-trades-by-name",
+        "required_params": [
+          "name"
+        ],
+        "optional_params": [],
+        "description": "Search U.S. Senate stock trades by the member's name.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "house_trades": {
+        "path": "house-trades",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Track the financial trades made by U.S. House members and their families with the FMP U.S. House Trades API. Access real-time information on stock sales, purchases, and other investment activities to gain insight into their financial decisions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "house_trades_by_name": {
+        "path": "house-trades-by-name",
+        "required_params": [
+          "name"
+        ],
+        "optional_params": [],
+        "description": "Search U.S. House stock trades by the member's name.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Esg": {
+      "esg_disclosures": {
+        "path": "esg-disclosures",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Align your investments with your values using the FMP ESG Investment Search API. Discover companies and funds based on Environmental, Social, and Governance (ESG) scores, performance, controversies, and business involvement criteria.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "esg_ratings": {
+        "path": "esg-ratings",
+        "required_params": [
+          "symbol"
+        ],
+        "optional_params": [],
+        "description": "Access comprehensive ESG ratings for companies and funds with the FMP ESG Ratings API. Make informed investment decisions based on environmental, social, and governance (ESG) performance data.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "esg_benchmark": {
+        "path": "esg-benchmark",
+        "required_params": [],
+        "optional_params": [
+          "year"
+        ],
+        "description": "Evaluate the ESG performance of companies and funds with the FMP ESG Benchmark Comparison API. Compare ESG leaders and laggards within industries to make informed and responsible investment decisions.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Commitment_Of_Traders": {
+      "commitment_of_traders_report": {
+        "path": "commitment-of-traders-report",
+        "required_params": [],
+        "optional_params": [
+          "symbol",
+          "from",
+          "to"
+        ],
+        "description": "Access comprehensive Commitment of Traders (COT) reports with the FMP COT Report API. This API provides detailed information about long and short positions across various sectors, helping you assess market sentiment and track positions in commodities, indices, and financial instruments.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "commitment_of_traders_analysis": {
+        "path": "commitment-of-traders-analysis",
+        "required_params": [],
+        "optional_params": [
+          "symbol",
+          "from",
+          "to"
+        ],
+        "description": "Gain in-depth insights into market sentiment with the FMP COT Report Analysis API. Analyze the Commitment of Traders (COT) reports for a specific date range to evaluate market dynamics, sentiment, and potential reversals across various sectors.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "commitment_of_traders_list": {
+        "path": "commitment-of-traders-list",
+        "required_params": [],
+        "optional_params": [],
+        "description": "Access a comprehensive list of available Commitment of Traders (COT) reports by commodity or futures contract using the FMP COT Report List API. This API provides an overview of different market segments, allowing users to retrieve and explore COT reports for a wide variety of commodities and financial instruments.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      }
+    },
+    "Fundraisers": {
+      "crowdfunding_offerings_latest": {
+        "path": "crowdfunding-offerings-latest",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit"
+        ],
+        "description": "Discover the most recent crowdfunding campaigns with the FMP Latest Crowdfunding Campaigns API. Stay informed on which companies and projects are actively raising funds, their financial details, and offering terms.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "crowdfunding_offerings_search": {
+        "path": "crowdfunding-offerings-search",
+        "required_params": [
+          "name"
+        ],
+        "optional_params": [],
+        "description": "Search for crowdfunding campaigns by company name, campaign name, or platform with the FMP Crowdfunding Campaign Search API. Access detailed information to track and analyze crowdfunding activities.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "crowdfunding_offerings": {
+        "path": "crowdfunding-offerings",
+        "required_params": [
+          "cik"
+        ],
+        "optional_params": [],
+        "description": "Access detailed information on all crowdfunding campaigns launched by a specific company with the FMP Crowdfunding By CIK API.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "fundraising_latest": {
+        "path": "fundraising-latest",
+        "required_params": [],
+        "optional_params": [
+          "page",
+          "limit",
+          "cik"
+        ],
+        "description": "Stay informed about the latest equity offerings with the FMP Equity Offering Updates API. Track new shares being issued by companies and get insights into exempt offerings and amendments.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "fundraising_search": {
+        "path": "fundraising-search",
+        "required_params": [
+          "name"
+        ],
+        "optional_params": [],
+        "description": "Easily search for equity offerings by company name or stock symbol with the FMP Equity Offering Search API. Access detailed information about recent share issuances to stay informed on company fundraising activities.",
+        "access": {
+          "FREE": "FULL",
+          "STARTER": "FULL",
+          "PREMIUM": "FULL",
+          "ULTIMATE": "FULL"
+        }
+      },
+      "fundraising": {
+        "path": "fundraising",
+        "required_params": [
+          "cik"
+        ],
+        "optional_params": [],
+        "description": "Access detailed information on equity offerings announced by specific companies with the FMP Company Equity Offerings by CIK API. Track offering activity and identify potential investment opportunities.",
         "access": {
           "FREE": "FULL",
           "STARTER": "FULL",

@@ -25,6 +25,8 @@ def _to_attr_name(category_key: str) -> str:
     return "".join(w.title() for w in category_key.replace("-", " ").split())
 
 
+SKILL_TOOL_NAME = "get_skill"
+
 # Allowlist map: tool_name → (category_attr, func_name, allowed_param_set)
 # Built once from the config and used for all dispatch — no getattr on caller input.
 _TOOL_MAP: dict = {}
@@ -33,7 +35,15 @@ _TOOL_MAP: dict = {}
 def _build_tools(config: dict, types) -> list:
     global _TOOL_MAP
     _TOOL_MAP = {}
-    tools = []
+    tools = [types.Tool(
+        name=SKILL_TOOL_NAME,
+        description=(
+            "Return the FMP usage guide (skill.md): how the tools are organised into "
+            "categories, parameter conventions, rate limits, and key setup. Call this "
+            "first if unsure how to use the other FMP tools."
+        ),
+        inputSchema={"type": "object", "properties": {}, "required": []},
+    )]
     for category_key, category_endpoints in config.get("endpoints", {}).items():
         if not isinstance(category_endpoints, dict):
             continue
@@ -70,6 +80,9 @@ def handle_list_tools(config: dict, types) -> list:
 
 def handle_call_tool(name: str, arguments: dict, fmp_client: FMP, types) -> list:
     import json
+    if name == SKILL_TOOL_NAME:
+        from .updater import get_skill
+        return [types.TextContent(type="text", text=get_skill())]
     if name not in _TOOL_MAP:
         return [types.TextContent(type="text", text=f"Error: unknown tool '{name}'")]
     attr_name, func_name, allowed_params = _TOOL_MAP[name]
